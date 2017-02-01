@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete resource &apos;LargestSubmatrixProduct&apos;" deleteContents="true" description="Delete resource &apos;LargestSubmatrixProduct&apos;" element1="/LargestSubmatrixProduct" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1484520530260"/>
+</session>

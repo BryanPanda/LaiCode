@@ -1,0 +1,22 @@
+package binaryTreeTraversal;
+
+import java.util.*;
+
+public class PostOrder {
+
+	public List<Integer> postOrder(TreeNode root) {
+		List<Integer> result = new ArrayList<>();
+		// base case
+		if (root == null) {
+			return result;
+		}
+		result.addAll(postOrder(root.left));
+		result.addAll(postOrder(root.right));
+		result.add(root.key);
+		return result;
+	}
+
+	public List<Integer> postOrder2(TreeNode root) {
+
+	}
+}

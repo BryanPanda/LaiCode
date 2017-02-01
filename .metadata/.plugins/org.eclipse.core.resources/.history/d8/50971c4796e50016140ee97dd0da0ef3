@@ -1,0 +1,10 @@
+package buyStock4;
+
+// Given an array of integers representing a stock’s price on each day. 
+// On each day you can only make one operation: either buy or sell one unit of stock, 
+// and at any time you can only hold at most one unit of stock, and you can make at most K transactions in total. 
+// Determine the maximum profit you can make.
+
+public class BuyStock4 {
+
+}

@@ -1,0 +1,20 @@
+package test;
+
+import java.util.*;
+
+public class Test2 {
+
+	public static void main(String[] agrs) {
+		LinkedList<Integer> linkedList = new LinkedList<>();
+		linkedList.add(0);
+		Map<String, Integer> map = new HashMap<>();
+		map.put("test", 0);
+		Test test = new Test(linkedList, map);
+
+		System.out.println(test.getLinkedList());
+		System.out.println(test.getMap());
+
+		test.setLinkedList(new LinkedList(new in[] { 1 }));
+	}
+
+}

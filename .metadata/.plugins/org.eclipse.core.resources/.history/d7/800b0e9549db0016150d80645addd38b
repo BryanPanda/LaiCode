@@ -1,0 +1,23 @@
+package generateRandomMaze;
+
+// Randomly generate a maze of size N * N (where N = 2K + 1) whose corridor
+// and wall’s width are both 1 cell. 
+// For each pair of cells on the corridor, there must exist one and only one
+// path between them. (Randomly means that the solution is generated randomly, 
+// and whenever the program is executed, the solution can be different.). 
+// The wall is denoted by 1 in the matrix and corridor is denoted by 0.
+
+// Assumptions:
+// 1. N = 2K + 1 and K >= 0
+// 2. the top left corner must be corridor
+// 3. there should be as many corridor cells as possible
+// 4. for each pair of cells on the corridor, there must exist one and only one path between them
+
+public class GenerateRandomMaze {
+
+	public int[][] maze(int n) {
+		// Write your solution here.
+		return new int[n][n];
+	}
+
+}

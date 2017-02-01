@@ -1,0 +1,8 @@
+package moveZeroI;
+
+public class MoveZeroI {
+
+	public int[] moveZero(int[] array) {
+		
+	}
+}

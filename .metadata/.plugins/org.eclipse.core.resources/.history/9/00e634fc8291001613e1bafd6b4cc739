@@ -1,0 +1,9 @@
+package test;
+
+import java.util.*;
+
+public class Test2 {
+
+	LinkedList<Integer> linkedList = new LinkedList<>();
+	Test test = new Test();
+}

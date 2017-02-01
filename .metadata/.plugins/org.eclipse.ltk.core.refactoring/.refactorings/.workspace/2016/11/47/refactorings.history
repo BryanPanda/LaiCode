@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Delete resource &apos;HashTableSeparateChaining&apos;" deleteContents="true" description="Delete resource &apos;HashTableSeparateChaining&apos;" element1="/HashTableSeparateChaining" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1479012056146"/>&#x0A;<refactoring comment="Delete resource &apos;allAnagrams&apos;" deleteContents="true" description="Delete resource &apos;allAnagrams&apos;" element1="/allAnagrams" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1479254463400"/>
+</session>

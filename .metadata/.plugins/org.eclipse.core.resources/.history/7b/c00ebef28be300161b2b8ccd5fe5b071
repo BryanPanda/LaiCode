@@ -1,0 +1,70 @@
+package allAnagrams;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+// Find all occurrence of anagrams of a given string s in a given string l. 
+// Return the list of starting indices.
+
+// Assumptions:
+// 1. s is not null or empty.
+// 2. l is not null.
+
+public class AllAnagrams {
+
+	public List<Integer> allAnagrams(String s, String l) {
+		List<Integer> result = new ArrayList<>();
+		if (l.length() < s.length()) {
+			return result;
+		}
+		Map<Character, Integer> map = getCountMap(s);
+		int slow = 0, fast = 0, num = map.size();
+		for (fast = 0; fast < s.length(); fast++) {
+			Integer count = map.get(l.charAt(fast));
+			if (count != null) {
+				map.put(l.charAt(fast), --count);
+				if (count == 0) {
+					num--;
+					if (num == 0) {
+						result.add(slow);
+					}
+				}
+			}
+		}
+		for (slow = 1; slow <= l.length() - s.length(); slow++, fast++) {
+			Integer count = map.get(l.charAt(slow - 1));
+			if (count != null) {
+				map.put(l.charAt(slow - 1), ++count);
+				if (count == 1) {
+					num++;
+				}
+			}
+			count = map.get(l.charAt(fast));
+			if (count != null) {
+				map.put(l.charAt(fast), --count);
+				if (count == 0) {
+					num--;
+				}
+				if (num == 0) {
+					result.add(slow);
+				}
+			}
+		}
+		return result;
+	}
+
+	private Map<Character, Integer> getSMap(String s) {
+		Map<Character, Integer> map = new HashMap<>();
+		for (int i = 0; i < s.length(); i++) {
+			Integer count = map.get(s.charAt(i));
+			count = count == null ? 1 : count + 1;
+			map.put(s.charAt(i), count);
+		}
+		return map;
+	}
+
+	// Time complexity is O(m + n).
+	// Space complexity is O(m).
+}

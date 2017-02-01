@@ -1,0 +1,15 @@
+package test;
+
+import java.util.*;
+
+public class Test {
+
+	LinkedList<Integer> linkedList = new LinkedList<>();
+	Map<String, Integer> map = new HashMap<>();
+
+	public Test(LinkedList<Integer> linkedList, Map<String, Integer> map) {
+		this.linkedList = linkedList;
+		this.map = map;
+	}
+
+}

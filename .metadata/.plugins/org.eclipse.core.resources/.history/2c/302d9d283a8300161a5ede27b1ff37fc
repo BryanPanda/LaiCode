@@ -1,0 +1,11 @@
+package moveZeroI;
+
+// Given an array of integers, move all the 0s to the right end of the array.
+// The relative order of the elements in the original array does not need to be maintained.
+
+public class MoveZeroI {
+
+	public int[] moveZero(int[] array) {
+		
+	}
+}
