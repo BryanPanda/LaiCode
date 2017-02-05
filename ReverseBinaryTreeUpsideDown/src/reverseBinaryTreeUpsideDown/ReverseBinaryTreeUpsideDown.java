@@ -6,6 +6,7 @@ package reverseBinaryTreeUpsideDown;
 
 public class ReverseBinaryTreeUpsideDown {
 
+	// Solution 1: recursive solution
 	public TreeNode reverse(TreeNode root) {
 		// base case
 		if (root == null || root.left == null) {
@@ -25,4 +26,26 @@ public class ReverseBinaryTreeUpsideDown {
 
 	// Time complexity is O(n).
 	// Space complexity is O(n).
+
+	// Solution 2: iterative solution
+	public TreeNode reverse2(TreeNode root) {
+		TreeNode cur = root;
+		TreeNode next = null;
+		TreeNode prev = null;
+		TreeNode temp = null;
+		TreeNode right = null;
+		while (cur != null) {
+			next = cur.left;
+			cur.left = prev;
+			right = cur.right;
+			cur.right = temp;
+			prev = cur;
+			cur = next;
+			temp = right;
+		}
+		return prev;
+	}
+
+	// Time complexity is O(n).
+	// Space complexity is O(1).
 }
