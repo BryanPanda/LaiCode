@@ -10,7 +10,6 @@ package restoreFromCountArray;
 public class RestoreFromCountArray {
 
 	public int[] restore(int[] array) {
-		
 		return array;
 	}
 

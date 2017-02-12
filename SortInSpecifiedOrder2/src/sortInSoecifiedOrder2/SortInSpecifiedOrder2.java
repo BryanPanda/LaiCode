@@ -4,5 +4,4 @@ package sortInSoecifiedOrder2;
 
 public class SortInSpecifiedOrder2 {
 
-
 }
