@@ -2,6 +2,7 @@ package recoverBinarySearchTree;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.LinkedList;
 import java.util.List;
 
 // Given a Binary Search Tree with only two nodes swapped. 
@@ -13,7 +14,7 @@ public class RecoverBinarySearchTree {
 	private TreeNode two;
 	private TreeNode temp;
 
-	// use the inorder Morris traversal
+	// Solution 1: use the inorder Morris traversal
 	public TreeNode recover(TreeNode root) {
 		TreeNode cur = root, node = null;
 		while (cur != null) {
@@ -86,7 +87,7 @@ public class RecoverBinarySearchTree {
 		return result;
 	}
 
-	// okay, but is Morris really needed?
+	// Solution 2: okay, but is Morris really needed?
 	private TreeNode first;
 	private TreeNode second;
 	private TreeNode prev = new TreeNode(Integer.MIN_VALUE);
@@ -118,6 +119,34 @@ public class RecoverBinarySearchTree {
 	// Time complexity is O(n).
 	// Space complexity is O(n), when BST is unbalanced.
 
+	// Solution 3: in-order traverse BST
+	public TreeNode recover3(TreeNode root) {
+		LinkedList<TreeNode> stack = new LinkedList<>();
+		TreeNode cur = root;
+		while (cur != null || !stack.isEmpty()) {
+			if (cur != null) {
+				stack.offerLast(cur);
+				cur = cur.left;
+			} else {
+				cur = stack.pollLast();
+				// compare prev with cur
+				if (prev.key >= cur.key && first == null) {
+					first = prev;
+				}
+				if (prev.key >= cur.key && first != null) {
+					second = cur;
+				}
+				prev = cur;
+				cur = cur.right;
+			}
+		}
+		// swap first and second
+		int temp = first.key;
+		first.key = second.key;
+		second.key = temp;
+		return root;
+	}
+
 	public static void main(String[] args) {
 		RecoverBinarySearchTree recoverBinarySearchTree = new RecoverBinarySearchTree();
 		TreeNode root = new TreeNode(4);
@@ -127,7 +156,7 @@ public class RecoverBinarySearchTree {
 		root.left.right = new TreeNode(5);
 		root.right.left = new TreeNode(3);
 		root.right.right = new TreeNode(7);
-		root = recoverBinarySearchTree.recover2(root);
+		root = recoverBinarySearchTree.recover3(root);
 		System.out.println(Arrays.toString(recoverBinarySearchTree.inOrder(root).toArray()));
 	}
 
