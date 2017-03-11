@@ -6034,3 +6034,103 @@ Binding(COMMAND+SHIFT+F11,
 
 !ENTRY org.eclipse.core.net 1 0 2017-02-27 13:44:45.132
 !MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+!SESSION 2017-03-10 19:01:59.664 -----------------------------------------------
+eclipse.buildId=4.5.2.M20160212-1500
+java.version=1.7.0_71
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.java.product -product org.eclipse.epp.package.java.product -keyring /Users/fanfeng/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product org.eclipse.epp.package.java.product -data /Users/fanfeng/Documents/LaiOffer -product org.eclipse.epp.package.java.product -keyring /Users/fanfeng/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.linuxtools.javadocs 4 0 2017-03-10 19:02:07.877
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.linuxtools.javadocs [984]
+  Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=1.8))"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.jface 2 0 2017-03-10 19:02:22.618
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2017-03-10 19:02:22.618
+!MESSAGE A conflict occurred for ALT+SHIFT+D R:
+Binding(ALT+SHIFT+D R,
+	ParameterizedCommand(Command(org.eclipse.rap.tools.launch.RAPLaunchShortcut.debug,Debug RAP Application,
+		Debug RAP Application,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@2dcb136e,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+SHIFT+D R,
+	ParameterizedCommand(Command(org.eclipse.wst.server.launchShortcut.debug,Debug on Server,
+		Debug the current selection on a server,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@6f68b23e,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2017-03-10 19:02:22.618
+!MESSAGE A conflict occurred for ALT+COMMAND+Q P:
+Binding(ALT+COMMAND+Q P,
+	ParameterizedCommand(Command(org.eclipse.php.ui.explorer,PHP Script Explorer,
+		Shows the Script Explorer,
+		Category(org.eclipse.ui.category.views,Views,Commands for opening views,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@428e3d96,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,cocoa,system)
+Binding(ALT+COMMAND+Q P,
+	ParameterizedCommand(Command(org.eclipse.ui.views.showView,Show View,
+		Shows a particular view,
+		Category(org.eclipse.ui.category.views,Views,Commands for opening views,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@86d64fd,
+		[Parameter(org.eclipse.ui.views.showView.viewId,View,null,true), Parameter(org.eclipse.ui.views.showView.secondaryId,Secondary Id,null,true), Parameter(org.eclipse.ui.views.showView.makeFast,As FastView,null,true)],,true),[org.eclipse.core.commands.Parameterization@351c7030]),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,cocoa,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2017-03-10 19:02:22.618
+!MESSAGE A conflict occurred for ALT+SHIFT+X R:
+Binding(ALT+SHIFT+X R,
+	ParameterizedCommand(Command(org.eclipse.rap.tools.launch.RAPLaunchShortcut.run,Run RAP Application,
+		Run RAP Application,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@4601225d,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+SHIFT+X R,
+	ParameterizedCommand(Command(org.eclipse.wst.server.launchShortcut.run,Run on Server,
+		Run the current selection on a server,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@74772b92,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2017-03-10 19:02:22.618
+!MESSAGE A conflict occurred for COMMAND+SHIFT+F11:
+Binding(COMMAND+SHIFT+F11,
+	ParameterizedCommand(Command(org.eclipse.tcf.te.tcf.ui.toolbar.command.historyLast,Execute Last Action,
+		,
+		Category(org.eclipse.tcf.te.ui.commands.category,Target Explorer Commands,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@3bcdb9fa,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(COMMAND+SHIFT+F11,
+	ParameterizedCommand(Command(org.eclipse.debug.ui.commands.RunLast,Run,
+		Launch in run mode,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@3f6ceac2,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,cocoa,system)
+
+!ENTRY org.eclipse.core.net 1 0 2017-03-10 19:02:23.844
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences

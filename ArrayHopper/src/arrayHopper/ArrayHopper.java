@@ -50,4 +50,16 @@ public class ArrayHopper {
 
 	// Time complexity is O(n^2).
 	// Space complexity is O(n).
+
+	public boolean canJump3(int[] nums) {
+		int max = 0;
+		for (int i = 0; i < nums.length; i++) {
+			max = max < i ? max : Math.max(max, i + nums[i]);
+		}
+		return max >= nums.length - 1;
+	}
+
+	// Time complexity is O(n).
+	// Space complexity is O(1).
+
 }
