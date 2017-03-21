@@ -3,6 +3,8 @@ package longestSubstringWithoutRepeatingCharacters;
 import java.util.HashSet;
 import java.util.Set;
 
+// LeetCode #3
+
 // Given a string, find the longest substring without any repeating characters and return the length of it. 
 // The input string is guaranteed to be not null.
 // For example, the longest substring without repeating letters for "bcdfbd" is "bcdf", we should return 4 in this case.
