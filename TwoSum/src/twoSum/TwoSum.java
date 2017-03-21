@@ -42,16 +42,4 @@ public class TwoSum {
 
 	// Time complexity is O(n).
 	// Space complexity is O(n).
-
-	public static void main(String[] args) {
-		TwoSum twoSum = new TwoSum();
-		int[] array = new int[] { 1 };
-		System.out.println(twoSum.existSum2(array, 0));
-		System.out.println(twoSum.existSum2(array, 1));
-		array = new int[] { 2, 3, 1 };
-		System.out.println(twoSum.existSum2(array, 5));
-		System.out.println(twoSum.existSum2(array, 6));
-		System.out.println(twoSum.existSum2(array, 7));
-	}
-
 }
