@@ -1,0 +1,69 @@
+package threeSum;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+// LeetCode #16
+
+// Determine if there exists three elements in a given array 
+// that sum to the given target number. 
+// Return all the triple of values that sums to target.
+
+// Assumption:
+// 1. The given array is not null and has length of at least 3
+// 2. No duplicate triples should be returned, order of the values in the tuple does not matter
+
+// Triple for loops O(n^3).
+// for + TwoSum, sort doesn't increase Big-O: 
+// 		O(n^2) time, O(n) space with hash table
+//		O(n^2) time, O(1) space with two pointers
+
+public class ThreeSum {
+
+	// O(n^2) time, O(1) space
+	public List<List<Integer>> allTriples(int[] array, int target) {
+		Arrays.sort(array);
+		List<List<Integer>> result = new ArrayList<List<Integer>>();
+		for (int i = 0; i < array.length - 2; i++) {
+			// need to guarantee no duplicate is in result
+			if (i > 0 && array[i] == array[i - 1]) {
+				continue;
+			}
+			twoSum(array, target - array[i], i, i + 1, array.length - 1, result);
+		}
+		return result;
+	}
+
+	public void twoSum(int[] array, int target, int cur, int left, int right, List<List<Integer>> result) {
+		while (left < right) {
+			if (array[left] + array[right] == target) {
+				result.add(Arrays.asList(array[cur], array[left++], array[right--]));
+				// need to guarantee no duplicate is in result
+				while (left < right && array[left] == array[left - 1]) {
+					left++;
+				}
+				while (left < right && array[right] == array[right + 1]) {
+					right--;
+				}
+			} else if (array[left] + array[right] < target) {
+				left++;
+			} else {
+				right--;
+			}
+		}
+	}
+
+	// Time complexity is O(n^2).
+	// Space complexity is O(1).
+
+	public static void main(String[] args) {
+		ThreeSum threeSum = new ThreeSum();
+		int[] array = new int[] {7,-1,14,-12,-8,7,2,-15,8,8,-8,-14,-4,-5,7,9,11,-4,-15,-6,1,-14,4,3,10,-5,2,1,6,11,2,-2,-5,-7,-6,2,-15,11,-6,8,-4,2,1,-1,4,-6,-15,1,5,-15,10,14,9,-8,-6,4,-6,11,12,-15,7,-1,-9,9,-1,0,-4,-1,-12,-2,14,-9,7,0,-3,-4,1,-2,12,14,-10,0,5,14,-1,14,3,8,10,-8,8,-5,-2,6,-11,12,13,-7,-12,8,6,-13,14,-2,-5,-11,1,3,-6};
+		List<List<Integer>> result = threeSum.allTriples(array, 8);
+		for (List<Integer> list : result) {
+			System.out.println(list.toString());
+		}
+	}
+
+}
