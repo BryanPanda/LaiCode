@@ -49,4 +49,13 @@ public class TwoSumClosest {
 	// Time complexity is O(n^2) in the worst case, because Arrays.sort() uses
 	// Quick Sort for primitive types.
 	// Space complexity is O(n) in the worst case, because of call-stack.
+
+	public static void main(String[] args) {
+		TwoSumClosest twoSumClosest = new TwoSumClosest();
+		int[] array = new int[] { 1, 4, 7, 13 };
+		System.out.println(twoSumClosest.closest2(array, 3));
+		System.out.println(twoSumClosest.closest2(array, 8));
+		System.out.println(twoSumClosest.closest2(array, 12));
+	}
+
 }
