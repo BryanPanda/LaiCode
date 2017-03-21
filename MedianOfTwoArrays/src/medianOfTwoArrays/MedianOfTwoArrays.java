@@ -2,8 +2,9 @@ package medianOfTwoArrays;
 
 import java.util.Arrays;
 
-// Given two sorted arrays of integers, find the median value.
+// LeetCode #4
 
+// Given two sorted arrays of integers, find the median value.
 // Assumptions: The two given array are not null and at least one of them is not empty.
 
 public class MedianOfTwoArrays {
@@ -58,14 +59,4 @@ public class MedianOfTwoArrays {
 
 	// Median of Medians algorithm can reduce Time Complexity to worst case
 	// O(m+n), and can reduce Space Complexity to worst case O(log(m+n)).
-
-	public static void main(String[] args) {
-		MedianOfTwoArrays medianOfTwoArrays = new MedianOfTwoArrays();
-		int[] a = new int[] { 4, 1, 6 };
-		int[] b = new int[] { 2, 3 };
-		System.out.println(medianOfTwoArrays.median(a, b));
-		a = new int[] { 1, 4 };
-		b = new int[] { 2, 3 };
-		System.out.println(medianOfTwoArrays.median(a, b));
-	}
 }
