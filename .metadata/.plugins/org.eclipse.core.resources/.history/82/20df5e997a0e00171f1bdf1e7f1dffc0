@@ -48,4 +48,13 @@ public class TwoSumSmaller {
 	// Time complexity is O(n^2) in the worst case, because Arrays.sort() uses
 	// Quick Sort for primitive types.
 	// Space complexity is O(n) in the worst case, because of call-stack.
+
+	public static void main(String[] agrs) {
+		TwoSumSmaller twoSumSmaller = new TwoSumSmaller();
+		int[] array = new int[] { -1, 0, 1 };
+		System.out.println(twoSumSmaller.smallerPairs2(array, 2));
+		array = new int[] { 1, 2, 2, 4, 7 };
+		System.out.println(twoSumSmaller.smallerPairs2(array, 7));
+	}
+
 }
