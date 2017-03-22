@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
-//Determine if there exists a set of four elements in a given array that sum to the given target number.
+// Determine if there exists a set of four elements in a given array that sum to the given target number.
 
 // Assumption: The given array is not null and has length of at least 4
 
