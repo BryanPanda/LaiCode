@@ -131,11 +131,4 @@ public class FourSum {
 
 	// Time complexity is O(n^2).
 	// Space complexity is O(n^2).
-
-	public static void main(String[] args) {
-		FourSum fourSum = new FourSum();
-		int[] array = new int[] { 3, 1, 6, 2, 5, 9, 4 };
-		System.out.println(fourSum.exist2(array, 9));
-	}
-
 }
