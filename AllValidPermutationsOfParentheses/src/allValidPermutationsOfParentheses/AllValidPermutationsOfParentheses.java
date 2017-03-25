@@ -3,8 +3,9 @@ package allValidPermutationsOfParentheses;
 import java.util.ArrayList;
 import java.util.List;
 
-// Given N pairs of parentheses “()”, return a list with all the valid permutations.
+// LeetCode #22
 
+// Given N pairs of parentheses “()”, return a list with all the valid permutations.
 // Assumption: n > 0
 
 public class AllValidPermutationsOfParentheses {
@@ -40,9 +41,4 @@ public class AllValidPermutationsOfParentheses {
 	// Time complexity is O(2^(2*n)), although this is only an upper bound, and
 	// is not tight, because some branches are cut off.
 	// Space complexity is O(n), because of call-stack.
-
-	public static void main(String[] args) {
-		AllValidPermutationsOfParentheses allValidPermutationsOfParentheses = new AllValidPermutationsOfParentheses();
-		System.out.println(allValidPermutationsOfParentheses.validParentheses(3).toString());
-	}
 }
