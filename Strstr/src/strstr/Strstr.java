@@ -1,5 +1,7 @@
 package strstr;
 
+// LeetCode #28
+
 // Determine if a small string is a substring of another large string.
 // Return the index of the first occurrence of the small string in the large string.
 // Return -1 if the small string is not a substring of the large string.
