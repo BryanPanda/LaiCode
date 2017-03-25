@@ -5,8 +5,9 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.PriorityQueue;
 
-// Merge K sorted lists into one big sorted list in ascending order.
+// LeetCode #23
 
+// Merge K sorted lists into one big sorted list in ascending order.
 // Assumption: ListOfLists is not null, and none of the lists is null.
 
 public class MergeKSortedLinkedLists {
@@ -52,18 +53,4 @@ public class MergeKSortedLinkedLists {
 
 	// When array sizes are big, solution 1 reads and writes each element once,
 	// solution 2 reads and writes reach element log(k) times.
-
-	public static void main(String[] args) {
-		MergeKSortedLinkedLists mergeKSortedLinkedLists = new MergeKSortedLinkedLists();
-		List<ListNode> listOfLists = new ArrayList<>();
-		ListNode head = new ListNode(new int[] { 1, 5, 7 });
-		listOfLists.add(head);
-		head = new ListNode(new int[] { 4 });
-		listOfLists.add(head);
-		head = new ListNode(new int[] { 2, 3, 5, 11 });
-		listOfLists.add(head);
-		head = new ListNode(new int[] { 2, 4, 4, 6, 8 });
-		listOfLists.add(head);
-		System.out.println(mergeKSortedLinkedLists.merge(listOfLists));
-	}
 }
