@@ -1,5 +1,7 @@
 package searchInShiftedSortedArray;
 
+// LeetCode #33
+
 // Given a target integer T and an integer array A, A is sorted in ascending order first, 
 // then shifted by an arbitrary number of positions.
 
@@ -66,18 +68,4 @@ public class SearchInShiftedSortedArray {
 
 	// Time complexity is O(log(n)).
 	// Space complexity is O(1).
-
-	public static void main(String[] args) {
-		SearchInShiftedSortedArray searchInShiftedSortedArray = new SearchInShiftedSortedArray();
-		int[] array = new int[] { 1, 2, 3, 4, 5 };
-		System.out.println(searchInShiftedSortedArray.search(array, 2));
-		array = new int[] { 2, 3, 4, 5, 1 };
-		System.out.println(searchInShiftedSortedArray.search(array, 4));
-		array = new int[] { 3, 4, 5, 1, 2 };
-		System.out.println(searchInShiftedSortedArray.search(array, 1));
-		array = new int[] { 4, 5, 1, 2, 3 };
-		System.out.println(searchInShiftedSortedArray.search(array, 5));
-		array = new int[] { 5, 1, 2, 3, 4 };
-		System.out.println(searchInShiftedSortedArray.search(array, 3));
-	}
 }
