@@ -1,5 +1,7 @@
 package maxWaterTrapped;
 
+// LeetCode #42
+
 // Given a non-negative integer array representing the heights of a list of adjacent bars. 
 // Suppose each bar has a width of 1. Find the largest amount of water that can be trapped in the histogram.
 
@@ -74,10 +76,4 @@ public class MaxWaterTrapped {
 
 	// Time complexity is O(n).
 	// Space complexity is O(1).
-
-	public static void main(String[] args) {
-		MaxWaterTrapped maxWaterTrapped = new MaxWaterTrapped();
-		int[] array = new int[] { 1, 3, 2, 4, 1, 3, 2, 4, 3, 2 };
-		System.out.println(maxWaterTrapped.maxTrapped3(array));
-	}
 }
