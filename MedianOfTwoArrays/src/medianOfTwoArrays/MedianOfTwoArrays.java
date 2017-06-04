@@ -5,7 +5,7 @@ import java.util.Arrays;
 // LeetCode #4
 
 // Given two sorted arrays of integers, find the median value.
-// Assumptions: The two given array are not null and at least one of them is not empty.
+// Assumptions: The two given arrays are not null and at least one of them is not empty.
 
 public class MedianOfTwoArrays {
 
