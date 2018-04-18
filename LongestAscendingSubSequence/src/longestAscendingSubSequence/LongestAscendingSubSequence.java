@@ -2,9 +2,11 @@ package longestAscendingSubSequence;
 
 import java.util.Arrays;
 
+// LeetCode 300.
+
 // Given an array A[0]...A[n-1] of integers, find out the length of the longest ascending subsequence.
 
-// Assumption: A is not null
+// Assumption: A is not null.
 
 public class LongestAscendingSubSequence {
 
@@ -42,7 +44,7 @@ public class LongestAscendingSubSequence {
 		for (int i = 1; i < array.length; i++) {
 			// tbl is guaranteed to be in ascending order
 			int index = find(tbl, 1, result, array[i]);
-			if (index == result) {
+			if (index == result) { // tbl[result] < array[i]
 				tbl[++result] = array[i];
 			} else {
 				tbl[index + 1] = array[i];
