@@ -1,3 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">&#x0A;<refactoring comment="Delete resource &apos;LongestCommonSubstring2&apos;" deleteContents="true" description="Delete resource &apos;LongestCommonSubstring2&apos;" element1="/LongestCommonSubstring2" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1484358640559"/>&#x0A;<refactoring comment="Delete resource &apos;LargestSetOfPointsWithPositivelope&apos;" deleteContents="true" description="Delete resource &apos;LargestSetOfPointsWithPositivelope&apos;" element1="/LargestSetOfPointsWithPositivelope" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1484426295549"/>
-</session>

@@ -1,6 +1,0 @@
-package test;
-
-public class Test2 {
-
-	Test test = new Test();
-}

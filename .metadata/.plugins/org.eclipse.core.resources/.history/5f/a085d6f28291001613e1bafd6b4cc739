@@ -1,7 +1,0 @@
-package test;
-
-public class Test2 {
-
-	LinkedList<Integer> linkedList = new LinkedList<>(1);
-	Test test = new Test();
-}

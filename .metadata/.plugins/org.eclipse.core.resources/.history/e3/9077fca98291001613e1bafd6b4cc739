@@ -1,9 +1,0 @@
-package test;
-
-import java.util.*;
-
-public class Test {
-
-	LinkedList<Integer> linkedList = new LinkedList<>();
-	Map<String, Integer> map = new HashMap<>();
-}
