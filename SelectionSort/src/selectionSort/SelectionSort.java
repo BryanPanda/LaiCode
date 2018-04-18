@@ -27,7 +27,7 @@ public class SelectionSort {
 		array[i] = array[j];
 		array[j] = temp;
 	}
-	
+
 	// Time complexity is O(n^2) in best case, average case, and worst case.
 	// Space complexity is O(1).
 }
