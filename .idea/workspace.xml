@@ -2,7 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9a5a9ba7-c35a-4b5f-a99a-6e277d16db98" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/SelectionSort/src/selectionSort/SelectionSort.java" afterPath="$PROJECT_DIR$/SelectionSort/src/selectionSort/SelectionSort.java" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/AllValidPermutationsOfParentheses/bin/allValidPermutationsOfParentheses/AllValidPermutationsOfParentheses.class" afterPath="$PROJECT_DIR$/AllValidPermutationsOfParentheses/bin/allValidPermutationsOfParentheses/AllValidPermutationsOfParentheses.class" />
+      <change beforePath="$PROJECT_DIR$/ArrayDeduplication/bin/arrayDeduplication/ArrayDeduplication.class" afterPath="$PROJECT_DIR$/ArrayDeduplication/bin/arrayDeduplication/ArrayDeduplication.class" />
+      <change beforePath="$PROJECT_DIR$/FirstOccurrence/bin/firstOccurrence/FirstOccurrence.class" afterPath="$PROJECT_DIR$/FirstOccurrence/bin/firstOccurrence/FirstOccurrence.class" />
+      <change beforePath="$PROJECT_DIR$/FourSum/bin/fourSum/FourSum.class" afterPath="$PROJECT_DIR$/FourSum/bin/fourSum/FourSum.class" />
+      <change beforePath="$PROJECT_DIR$/GenericMaxHeap/bin/genericMaxHeap/GenericMaxHeap.class" afterPath="$PROJECT_DIR$/GenericMaxHeap/bin/genericMaxHeap/GenericMaxHeap.class" />
+      <change beforePath="$PROJECT_DIR$/GenericMinHeap/bin/genericMinHeap/GenericMinHeap.class" afterPath="$PROJECT_DIR$/GenericMinHeap/bin/genericMinHeap/GenericMinHeap.class" />
+      <change beforePath="$PROJECT_DIR$/HashMapSeparateChaining/bin/hashMapSeparateChaining/HashMapSeparateChaining$Node.class" afterPath="$PROJECT_DIR$/HashMapSeparateChaining/bin/hashMapSeparateChaining/HashMapSeparateChaining$Node.class" />
+      <change beforePath="$PROJECT_DIR$/LRUCache/bin/lruCache/LRUCache$Node.class" afterPath="$PROJECT_DIR$/LRUCache/bin/lruCache/LRUCache$Node.class" />
+      <change beforePath="$PROJECT_DIR$/LastOccurrence/bin/lastOccurrence/LastOccurrence.class" afterPath="$PROJECT_DIR$/LastOccurrence/bin/lastOccurrence/LastOccurrence.class" />
+      <change beforePath="$PROJECT_DIR$/LongestAscendingSubSequence/bin/longestAscendingSubSequence/LongestAscendingSubSequence.class" afterPath="$PROJECT_DIR$/LongestAscendingSubSequence/bin/longestAscendingSubSequence/LongestAscendingSubSequence.class" />
+      <change beforePath="$PROJECT_DIR$/MaxWaterTrapped/bin/maxWaterTrapped/MaxWaterTrapped.class" afterPath="$PROJECT_DIR$/MaxWaterTrapped/bin/maxWaterTrapped/MaxWaterTrapped.class" />
+      <change beforePath="$PROJECT_DIR$/MergeKSortedLinkedLists/bin/mergeKSortedLinkedLists/MergeKSortedLinkedLists$1.class" afterPath="$PROJECT_DIR$/MergeKSortedLinkedLists/bin/mergeKSortedLinkedLists/MergeKSortedLinkedLists$1.class" />
+      <change beforePath="$PROJECT_DIR$/MergeKSortedLinkedLists/bin/mergeKSortedLinkedLists/MergeKSortedLinkedLists.class" afterPath="$PROJECT_DIR$/MergeKSortedLinkedLists/bin/mergeKSortedLinkedLists/MergeKSortedLinkedLists.class" />
+      <change beforePath="$PROJECT_DIR$/MergeTwoSortedLinkedList/bin/mergeTwoSortedLinkedList/MergeTwoSortedLinkedList.class" afterPath="$PROJECT_DIR$/MergeTwoSortedLinkedList/bin/mergeTwoSortedLinkedList/MergeTwoSortedLinkedList.class" />
+      <change beforePath="$PROJECT_DIR$/PlaceToPutChair/bin/placeToPutChair/PlaceToPutChair.class" afterPath="$PROJECT_DIR$/PlaceToPutChair/bin/placeToPutChair/PlaceToPutChair.class" />
+      <change beforePath="$PROJECT_DIR$/ReverseLinkedListInPairs/bin/reverseLinkedListInPairs/ReverseLinkedListInPairs.class" afterPath="$PROJECT_DIR$/ReverseLinkedListInPairs/bin/reverseLinkedListInPairs/ReverseLinkedListInPairs.class" />
+      <change beforePath="$PROJECT_DIR$/SearchInShiftedSortedArray/bin/searchInShiftedSortedArray/SearchInShiftedSortedArray.class" afterPath="$PROJECT_DIR$/SearchInShiftedSortedArray/bin/searchInShiftedSortedArray/SearchInShiftedSortedArray.class" />
+      <change beforePath="$PROJECT_DIR$/SelectionSort/bin/selectionSort/SelectionSort.class" afterPath="$PROJECT_DIR$/SelectionSort/bin/selectionSort/SelectionSort.class" />
+      <change beforePath="$PROJECT_DIR$/Strstr/bin/strstr/Strstr.class" afterPath="$PROJECT_DIR$/Strstr/bin/strstr/Strstr.class" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -30,9 +49,9 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds">
     <option name="y" value="23" />
-    <option name="width" value="1067" />
+    <option name="width" value="1680" />
     <option name="height" value="953" />
   </component>
   <component name="ProjectLevelVcsManager">
@@ -191,7 +210,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1680" height="953" extended-state="6" />
+    <frame x="0" y="23" width="1680" height="953" extended-state="0" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32983682" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -307,6 +326,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="19" column="17" lean-forward="true" selection-start-line="19" selection-start-column="17" selection-end-line="19" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ReversePolishNotation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
