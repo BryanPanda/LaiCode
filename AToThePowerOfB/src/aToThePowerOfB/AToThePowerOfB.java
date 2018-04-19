@@ -1,9 +1,10 @@
 package aToThePowerOfB;
 
+// Evaluate a to the power of b, assuming both a and b are integers and b is non-negative. 
+
 public class AToThePowerOfB {
 
 	public long power(int a, int b) {
-		// Assumption: b >= 0
 		if (b == 0) {
 			return 1;
 		}
