@@ -1,7 +1,5 @@
 package quickSort;
 
-import java.util.Arrays;
-
 public class QuickSort {
 
 	public int[] sort(int[] array) {
@@ -55,22 +53,4 @@ public class QuickSort {
 	// O(n*log(n)) in the best and average cases.
 	// Space complexity is O(n) in the worst case, and 
 	// O(log(n)) in the best and average cases, because of call-stack.
-
-	public static void main(String[] args) {
-		QuickSort selectionSort = new QuickSort();
-		int[] array = null;
-		System.out.println(Arrays.toString(selectionSort.sort(array)));
-		array = new int[0];
-		System.out.println(Arrays.toString(selectionSort.sort(array)));
-		array = new int[] { 0 };
-		System.out.println(Arrays.toString(selectionSort.sort(array)));
-		array = new int[] { -1, -3, 4, 7 };
-		System.out.println(Arrays.toString(selectionSort.sort(array)));
-		array = new int[] { 1, 2, 3, 4 };
-		System.out.println(Arrays.toString(selectionSort.sort(array)));
-		array = new int[] { 4, 3, 2, 1 };
-		System.out.println(Arrays.toString(selectionSort.sort(array)));
-		array = new int[] { 2, 4, 1, 5, 3 };
-		System.out.println(Arrays.toString(selectionSort.sort(array)));
-	}
 }
