@@ -41,3 +41,4 @@ public class RainbowSort {
 	// 1. definition of three bounds, each of them exclusive/inclusive
 	// 2. j++ in swap(array, i++, j++)
 }
+
