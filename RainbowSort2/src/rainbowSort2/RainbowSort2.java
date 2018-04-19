@@ -1,7 +1,5 @@
 package rainbowSort2;
 
-import java.util.*;
-
 // Given an array of balls, where the color of the balls can only be Red, Green, Blue or Black, 
 // sort the balls such that all balls with same color are grouped together, and from left to right 
 // the order is Red->Green->Blue->Black. (Red is denoted by 0, Green is denoted by 1,  Blue is denoted by 2
@@ -46,29 +44,4 @@ public class RainbowSort2 {
 	
 	// Time complexity is O(n).
 	// Space complexity is O(1).
-	
-	public static void main(String[] args) {
-		RainbowSort2 rainbowSort2 = new RainbowSort2();
-		int[] array = null;
-		System.out.println(Arrays.toString(rainbowSort2.sort(array)));
-		
-		array = new int[] { 2 };
-		System.out.println(Arrays.toString(rainbowSort2.sort(array)));
-
-		array = new int[] { 1, 0 };
-		System.out.println(Arrays.toString(rainbowSort2.sort(array)));
-
-		array = new int[] { 0, 3, 1, 2 };
-		System.out.println(Arrays.toString(rainbowSort2.sort(array)));
-
-		array = new int[] { 2, 2, 3, 1, 0, 3, 1, 1, 0, 2 };
-		System.out.println(Arrays.toString(rainbowSort2.sort(array)));
-	
-		array = new int[] { 1, 3, 3, 3, 2, 2, 1, 1, 1, 0, 0, 1, 2, 3, 1, 0 };
-		System.out.println(Arrays.toString(rainbowSort2.sort(array)));
-	
-		array = new int[] { 2, 0, 0, 1, 1 };
-		System.out.println(Arrays.toString(rainbowSort2.sort(array)));
-	}
-			
 }
