@@ -23,6 +23,7 @@ public class FibonacciNumber {
 		return next;
 	}
 	// Time complexity is O(k).
+	// Space complexity is O(1).
 
 	// Recursion
 	public long fibo2(int k) {
@@ -35,6 +36,7 @@ public class FibonacciNumber {
 		return fibo2(k - 2) + fibo2(k - 1);
 	}
 	// Time complexity is O(2^k).
+	// Space complexity is O(k).
 
 	// Matrix multiplication
 	// M = { {1, 1}, {1, 0} } = { {f(2), f(1)}, {f(1), f(0)} }
@@ -75,16 +77,4 @@ public class FibonacciNumber {
 	}
 	// Time complexity is O(log(k)).
 	// Space complexity is O(1).
-
-	public static void main(String[] args) {
-		FibonacciNumber fibonacciNumber = new FibonacciNumber();
-		System.out.println(fibonacciNumber.fibo3(0));
-		System.out.println(fibonacciNumber.fibo3(1));
-		System.out.println(fibonacciNumber.fibo3(2));
-		System.out.println(fibonacciNumber.fibo3(3));
-		System.out.println(fibonacciNumber.fibo3(4));
-		System.out.println(fibonacciNumber.fibo3(5));
-		System.out.println(fibonacciNumber.fibo3(6));
-		System.out.println(fibonacciNumber.fibo3(50));
-	}
 }
