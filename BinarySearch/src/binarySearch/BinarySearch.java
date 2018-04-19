@@ -23,3 +23,4 @@ public class BinarySearch {
 	
 	// Time complexity is O(log(n)).
 }
+
