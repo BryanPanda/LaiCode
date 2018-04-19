@@ -1,7 +1,5 @@
 package rainbowSort3;
 
-import java.util.Arrays;
-
 // Given an array of balls with k different colors denoted by numbers 1 to k, sort the balls.
 
 public class RainbowSort3 {
@@ -43,31 +41,4 @@ public class RainbowSort3 {
 	
 	// Time complexity is O(n*k).
 	// Space complexity is O(1).
-	
-	public static void main(String[] args) {
-		RainbowSort3 rainbowSort3 = new RainbowSort3();
-		int[] array = new int[] { 1 };
-		System.out.println(Arrays.toString(rainbowSort3.sort(array, 1)));
-
-		array = new int[] { 1, 6, 2, 1, 2 };
-		System.out.println(Arrays.toString(rainbowSort3.sort(array, 6)));
-
-		array = new int[] { 3, 1, 5, 5, 1, 4, 2 };
-		System.out.println(Arrays.toString(rainbowSort3.sort(array, 5)));
-
-		array = new int[] { 3, 3, 4, 2, 1, 4, 2, 2, 1, 3 };
-		System.out.println(Arrays.toString(rainbowSort3.sort(array, 4)));
-	
-		array = new int[] { 2, 4, 4, 4, 3, 3, 2, 2, 2, 1, 1, 2, 3, 4, 2, 1 };
-		System.out.println(Arrays.toString(rainbowSort3.sort(array, 4)));
-	
-		array = new int[] { 3, 1, 1, 2, 2 };
-		System.out.println(Arrays.toString(rainbowSort3.sort(array, 3)));
-		
-		array = new int[] { 1, 3 };
-		System.out.println(Arrays.toString(rainbowSort3.sort(array, 5)));
-		
-		array = new int[] { 5, 2, 2 };
-		System.out.println(Arrays.toString(rainbowSort3.sort(array, 5)));
-	}
 }
