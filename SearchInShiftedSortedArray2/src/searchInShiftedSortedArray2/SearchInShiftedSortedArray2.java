@@ -53,22 +53,4 @@ public class SearchInShiftedSortedArray2 {
 
 	// Time complexity is O(n) in the worst case, but O(log(n)) in average case
 	// Space complexity is O(1).
-
-	public static void main(String[] args) {
-		SearchInShiftedSortedArray2 searchInShiftedSortedArray2 = new SearchInShiftedSortedArray2();
-		int[] array = new int[] { 3, 4, 5, 1, 2 };
-		System.out.println(searchInShiftedSortedArray2.search(array, 4));
-		array = new int[] { 3, 3, 3, 1, 3 };
-		System.out.println(searchInShiftedSortedArray2.search(array, 1));
-		array = new int[] { 3, 1, 3, 3, 3 };
-		System.out.println(searchInShiftedSortedArray2.search(array, 3));
-		array = new int[] { 4, 5, 2, 2, 3 };
-		System.out.println(searchInShiftedSortedArray2.search(array, 2));
-		array = new int[] { 1, 1, 2, 2, 4 };
-		System.out.println(searchInShiftedSortedArray2.search(array, 4));
-		array = new int[] { 2, 2, 2, 2, 2, 2, 2, 2, 0, 2 };
-		System.out.println(searchInShiftedSortedArray2.search(array, 0));
-		array = new int[] { 2, 0, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2 };
-		System.out.println(searchInShiftedSortedArray2.search(array, 0));
-	}
 }
