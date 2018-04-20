@@ -1,6 +1,6 @@
 package searchInShiftedSortedArray;
 
-// LeetCode #33
+// LeetCode #33 (Search in Rotated Sorted Array).
 
 // Given a target integer T and an integer array A, A is sorted in ascending order first, 
 // then shifted by an arbitrary number of positions.
