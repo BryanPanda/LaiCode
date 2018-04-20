@@ -12,15 +12,20 @@ public class FirstOccurrence {
 			return -1;
 		}
 		int left = 0, right = array.length - 1;
-		while (left < right) {
+		while (left < right - 1) {
 			int mid = left + (right - left) / 2;
 			if (array[mid] >= target) {
 				right = mid;
 			} else {
-				left = mid + 1;
+				left = mid;
 			}
 		}
-		return array[left] == target ? left : -1;
+		if (array[left] == target) {
+			return left;
+		} else if (array[right] == target) {
+			return right;
+		}
+		return -1;
 	}
 
 	// Time complexity is O(log(n)).
