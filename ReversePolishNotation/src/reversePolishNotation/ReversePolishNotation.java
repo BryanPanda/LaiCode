@@ -2,7 +2,7 @@ package reversePolishNotation;
 
 import java.util.LinkedList;
 
-// LeetCode 150.
+// LeetCode #150 (Reverse Polish Notation).
 
 // Evaluate the value of an arithmetic expression in Reverse Polish Notation.
 
