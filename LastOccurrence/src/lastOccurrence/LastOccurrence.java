@@ -1,7 +1,5 @@
 package lastOccurrence;
 
-// LeetCode #34
-
 // Given a target integer T and an integer array A sorted in ascending order, 
 // find the index of the last occurrence of T in A or return -1 if there is no such index.
 
