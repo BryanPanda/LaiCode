@@ -57,5 +57,10 @@ public class KClosest {
 
 	// Time complexity is O(log(n) + k).
 	// Space complexity is O(1).
+	
+	// Follow up: The returned integer array is ordered by the closeness to target, could you
+	// return them in ascending order?
+	// Answer: Use a linked list: Add to first when left element is picked, and add to last 
+	// when right element is picked.
 }
 
