@@ -1,6 +1,6 @@
 package firstOccurrence;
 
-// LeetCode #34
+// LeetCode #278 (First Bad Version)
 
 // Given a target integer T and an integer array A sorted in ascending order, 
 // find the index of the first occurrence of T in A or return -1 if there is no such index.
@@ -12,28 +12,18 @@ public class FirstOccurrence {
 			return -1;
 		}
 		int left = 0, right = array.length - 1;
-		while (left < right - 1) {
+		while (left < right) {
 			int mid = left + (right - left) / 2;
-			// Note: when array[mid] == target, move left or right?
 			if (array[mid] >= target) {
 				right = mid;
 			} else {
-				left = mid;
+				left = mid + 1;
 			}
-			// Note: in binary search, we have mid +/- 1, so left and right are
-			// approaching in each of the iterations; but here, left and right
-			// might not be, thus the change in while condition and
-			// post-processing below.
 		}
-		// up to this point, left == right - 1
-		if (array[left] == target) {
-			return left;
-		} else if (array[right] == target) {
-			return right;
-		}
-		return -1;
+		return array[left] == target ? left : -1;
 	}
 
 	// Time complexity is O(log(n)).
 	// Space complexity is O(1).
 }
+
