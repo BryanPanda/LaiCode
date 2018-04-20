@@ -1,6 +1,6 @@
 package firstOccurrence;
 
-// LeetCode #278 (First Bad Version)
+// LeetCode #278 (First Bad Version), #34 (Search for a Range).
 
 // Given a target integer T and an integer array A sorted in ascending order, 
 // find the index of the first occurrence of T in A or return -1 if there is no such index.
