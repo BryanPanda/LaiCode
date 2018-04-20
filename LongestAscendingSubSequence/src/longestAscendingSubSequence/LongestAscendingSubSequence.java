@@ -2,7 +2,7 @@ package longestAscendingSubSequence;
 
 import java.util.Arrays;
 
-// LeetCode 300.
+// LeetCode #300 (Longest Increasing Subsequence).
 
 // Given an array A[0]...A[n-1] of integers, find out the length of the longest ascending subsequence.
 
