@@ -1,6 +1,6 @@
 package kClosest;
 
-import java.util.*;
+// LeetCode #658 (Find K Closest Elements).
 
 // Given a target integer T, a non-negative integer K and an integer array A sorted in ascending order, 
 // find the K closest numbers to T in A.
@@ -55,12 +55,7 @@ public class KClosest {
 		return -1;
 	}
 
-	// Time complexity is O(log(n)*k).
+	// Time complexity is O(log(n) + k).
 	// Space complexity is O(1).
-
-	public static void main(String[] args) {
-		KClosest kClosest = new KClosest();
-		int[] array = new int[] { 1, 3, 3, 6, 9, 9, 12, 15 };
-		System.out.println(Arrays.toString(kClosest.kClosest(array, 10, 5)));
-	}
 }
+
