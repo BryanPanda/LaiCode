@@ -64,15 +64,4 @@ public class TotalOccurrence {
 
 	// Time complexity is O(log(n)).
 	// Space complexity is O(1).
-
-	public static void main(String[] args) {
-		TotalOccurrence totalOccurrence = new TotalOccurrence();
-		int[] array = new int[] {};
-		System.out.println(totalOccurrence.totalOccur(array, 3));
-		array = new int[] { 1, 2, 3, 4, 5 };
-		System.out.println(totalOccurrence.totalOccur(array, 3));
-		array = new int[] { 1, 2, 2, 2, 3 };
-		System.out.println(totalOccurrence.totalOccur(array, 2));
-	}
-
 }
