@@ -35,7 +35,7 @@ public class SearchInShiftedSortedArray2 {
 					// target is in the right half
 					left = mid + 1;
 				}
-			} else if (array[left] > array[mid]) {
+			} else if (array[mid] < array[left]) {
 				// array drops on the left half, right half is monotonic
 				if (array[mid] < target && target <= array[right]) {
 					left = mid + 1;
