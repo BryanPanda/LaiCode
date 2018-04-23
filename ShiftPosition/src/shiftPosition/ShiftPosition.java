@@ -1,5 +1,7 @@
 package shiftPosition;
 
+// LeetCode #153 (Find Minimum in Rotated Sorted Array).
+
 // Given an integer array A, A is sorted in ascending order first then shifted by 
 // an arbitrary number of positions. For Example, A = {3, 4, 5, 1, 2} (shifted left by 2 positions).
 // Find the index of the smallest number.
@@ -16,16 +18,16 @@ public class ShiftPosition {
 		int left = 0, right = array.length - 1;
 		while (left < right - 1) {
 			int mid = left + (right - left) / 2;
-			if (mid < right && array[mid] > array[mid + 1]) {
-				return mid + 1;
-			}
-			if (mid > left && array[mid] < array[mid - 1]) {
+			if (array[mid - 1] > array[mid]) {
 				return mid;
+			}
+			if (array[mid] > array[mid + 1]) {
+				return mid + 1;
 			}
 			// up to this point,
 			// mid == right || array[mid] < array[mid + 1] ||
 			// array == left || array[mid] > array[mid - 1]
-			if (array[right] <= array[mid]) {
+			if (array[mid] >= array[right]) {
 				left = mid;
 			} else {
 				right = mid;
@@ -37,13 +39,4 @@ public class ShiftPosition {
 
 	// Time complexity is O(log(n)).
 	// Space complexity is O(1).
-
-	public static void main(String[] args) {
-		ShiftPosition shiftPosition = new ShiftPosition();
-		int[] array = new int[] { 3, 4, 5, 1, 2 };
-		System.out.println(shiftPosition.getIndexOfMinNumber(array));
-		array = new int[] { 1, 2, 3, 4, 5 };
-		System.out.println(shiftPosition.getIndexOfMinNumber(array));
-	}
-
 }
