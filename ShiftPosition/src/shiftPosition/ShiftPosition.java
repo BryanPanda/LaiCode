@@ -18,19 +18,12 @@ public class ShiftPosition {
 		int left = 0, right = array.length - 1;
 		while (left < right - 1) {
 			int mid = left + (right - left) / 2;
-			if (array[mid - 1] > array[mid]) {
-				return mid;
-			}
-			if (array[mid] > array[mid + 1]) {
-				return mid + 1;
-			}
-			// up to this point,
-			// mid == right || array[mid] < array[mid + 1] ||
-			// array == left || array[mid] > array[mid - 1]
-			if (array[mid] >= array[right]) {
+			if (array[left] > array[mid]) {
+				right = mid;
+			} else if (array[mid] > array[right]) {
 				left = mid;
 			} else {
-				right = mid;
+				return left;
 			}
 		}
 		// up to this point, left == right - 1;
