@@ -29,16 +29,16 @@ public class SearchInShiftedSortedArray {
 		int left = 0, right = array.length - 1;
 		while (left < right - 1) {
 			int mid = left + (right - left) / 2;
-			if (mid < right && array[mid] > array[mid + 1]) {
-				return mid;
-			}
-			if (mid > left && array[mid - 1] > array[mid]) {
+			if (array[mid - 1] > array[mid]) {
 				return mid - 1;
+			}
+			if (array[mid] > array[mid + 1]) {
+				return mid;
 			}
 			// up to this point,
 			// mid == right || array[mid] < array[mid + 1] ||
 			// mid == left || array[mid - 1] < array[mid]
-			if (array[left] >= array[mid]) {
+			if (array[mid] <= array[left]) {
 				right = mid;
 			} else {
 				left = mid;
