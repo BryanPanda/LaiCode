@@ -40,3 +40,4 @@ public class ShiftPosition {
 	// Time complexity is O(log(n)).
 	// Space complexity is O(1).
 }
+
