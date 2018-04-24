@@ -57,7 +57,7 @@ public class KSmallestInArray {
 		return result;
 	}
 
-	// Time complexity is O(k*log(k) + (n-k)*log(k) + k) = O(n*log(n)).
+	// Time complexity is O(k*log(k) + (n-k)*log(k) + k*log(k)) = O(n*log(n)).
 	// Space complexity is O(k).
 
 	public int[] kSmallest3(int[] array, int k) {
