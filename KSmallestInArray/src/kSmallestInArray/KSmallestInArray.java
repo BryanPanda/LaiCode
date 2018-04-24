@@ -13,6 +13,25 @@ public class KSmallestInArray {
 		if (k == 0) {
 			return new int[0];
 		}
+		List<Integer> list = new ArrayList<>();
+		for (int i = 0; i < array.length; i++) {
+			list.add(array[i]);
+		}
+		PriorityQueue<Integer> minHeap = new PriorityQueue<Integer>(list);
+		int[] result = new int[k];
+		for (int i = 0; i < k; i++) {
+			result[i] = minHeap.poll();
+		}
+		return result;
+	}
+
+	// Time complexity is O(n + k*log(n)) = O(n*log(n)).
+	// Space complexity is O(n).
+	
+	public int[] kSmallest2(int[] array, int k) {
+		if (k == 0) {
+			return new int[0];
+		}
 		PriorityQueue<Integer> maxHeap = new PriorityQueue<Integer>(k, new Comparator<Integer>() {
 			@Override
 			public int compare(Integer one, Integer two) {
@@ -38,28 +57,8 @@ public class KSmallestInArray {
 		return result;
 	}
 
-	// Time complexity is O(n*log(k) + k), but O((n-k)*log(k) + k), if
-	// heapifying.
+	// Time complexity is O(k*log(k) + (n-k)*log(k) + k) = O(n*log(n)).
 	// Space complexity is O(k).
-
-	public int[] kSmallest2(int[] array, int k) {
-		if (k == 0) {
-			return new int[0];
-		}
-		List<Integer> list = new ArrayList<>();
-		for (int i = 0; i < array.length; i++) {
-			list.add(array[i]);
-		}
-		PriorityQueue<Integer> minHeap = new PriorityQueue<Integer>(list);
-		int[] result = new int[k];
-		for (int i = 0; i < k; i++) {
-			result[i] = minHeap.poll();
-		}
-		return result;
-	}
-
-	// Time complexity is O(n + k*log(n)).
-	// Space complexity is O(n).
 
 	public int[] kSmallest3(int[] array, int k) {
 		if (array == null || array.length == 0 || k == 0) {
@@ -108,19 +107,10 @@ public class KSmallestInArray {
 	}
 
 	// Time complexity is O(n^2) in the worst case, but O(n) in the average
-	// case.
-	// Note that time complexity of Quick Sort is O(n^2) in the worst case, but
-	// O(n*log(n)) in the average case.
-	// Space complexity is O(n) in the worst case, because of call-stack.
-
-	public static void main(String[] args) {
-		KSmallestInArray kSmallestInArray = new KSmallestInArray();
-		int[] array = new int[] { 3, 4, 1, 2, 5 };
-		System.out.println(Arrays.toString(kSmallestInArray.kSmallest3(array, 1)));
-		System.out.println(Arrays.toString(kSmallestInArray.kSmallest3(array, 2)));
-		System.out.println(Arrays.toString(kSmallestInArray.kSmallest3(array, 3)));
-		System.out.println(Arrays.toString(kSmallestInArray.kSmallest3(array, 4)));
-		System.out.println(Arrays.toString(kSmallestInArray.kSmallest3(array, 5)));
-	}
-
+	// case. Space complexity is O(n) in the worst case, but O(log(n)) in the average
+	// case, because of call-stack.
+	
+	// Quick Sort: Time complexity is O(n^2) in the worst case, but
+	// O(n*log(n)) in the average case. Space complexity is O(n) in the worst case,
+	// but O(log(n)) in the average case, because of call-stack.
 }
