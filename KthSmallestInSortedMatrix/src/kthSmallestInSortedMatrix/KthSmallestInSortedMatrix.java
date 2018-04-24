@@ -3,6 +3,8 @@ package kthSmallestInSortedMatrix;
 import java.util.Comparator;
 import java.util.PriorityQueue;
 
+// LeetCode #378 (Kth Smallest Element in a Sorted Matrix).
+
 // Given a matrix of size N x M. For each row the elements are sorted in ascending order, 
 // and for each column the elements are also sorted in ascending order. 
 // Find the k-th smallest number in it.
@@ -26,12 +28,6 @@ public class KthSmallestInSortedMatrix {
 			this.row = row;
 			this.col = col;
 			this.value = value;
-		}
-
-		@Override
-		public String toString() {
-			String s = "Row: " + this.row + ", Column: " + this.col + ", Value: " + this.value;
-			return s;
 		}
 	}
 
@@ -65,14 +61,6 @@ public class KthSmallestInSortedMatrix {
 		return minHeap.poll().value;
 	}
 
-	// Time complexity is O(m*n).
-	// Space complexity is O(k + n^2) = O(n^2).
-
-	public static void main(String[] args) {
-		KthSmallestInSortedMatrix kthSmallestInSortedMatrix = new KthSmallestInSortedMatrix();
-		int[][] matrix = new int[][] { { 1, 3, 5, 7 }, { 2, 4, 8, 9 }, { 3, 5, 11, 15 }, { 6, 8, 13, 18 } };
-		System.out.println(kthSmallestInSortedMatrix.kthSmallest(matrix, 5));
-		System.out.println(kthSmallestInSortedMatrix.kthSmallest(matrix, 8));
-	}
-
+	// Time complexity is O(k*log(k)).
+	// Space complexity is O(k + m*n) = O(m*n).
 }
