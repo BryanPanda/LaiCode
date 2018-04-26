@@ -1,6 +1,6 @@
 package reverseLinkedListInPairs;
 
-// LeetCode #24
+// LeetCode #24 (Swap Nodes in Pairs).
 
 // Reverse pairs of elements in a singly-linked list.
 
