@@ -15,6 +15,7 @@ import java.util.PriorityQueue;
 
 public class KthSmallestInSortedMatrix {
 
+	// Solution 1: BFS + Heap 
 	static class Cell {
 		// Option 1: if class Cell doesn't implements Comparable<Cell>,
 		// then below PriorityQueue<Cell>() needs a Comparator in it.
@@ -63,4 +64,47 @@ public class KthSmallestInSortedMatrix {
 
 	// Time complexity is O(k*log(k)).
 	// Space complexity is O(k + m*n) = O(m*n).
+	
+	// Solution 2: Binary Search
+	public int kthSmallest2(int[][] matrix, int k) {
+		int m = matrix.length, n = matrix[0].length;
+		int low = matrix[0][0], high = matrix[m - 1][n - 1];
+		while (low < high) {
+			int mid = low + (high - low) / 2;
+			// for each row, binary search to find how many elements are < mid
+			int count = 0;
+			for (int i = 0; i < m; i++) {
+				count += countSmallerOrEqual(matrix[i], mid);
+			}
+			if (count < k) {
+				low = mid + 1;
+			}
+			else {
+				high = mid;
+			}
+		}
+		return low;
+	}
+	
+	private int countSmallerOrEqual(int[] array, int target) {
+		if (array == null || array.length == 0) {
+			return 0;
+		}
+		int left = 0, right = array.length;
+		while (left < right) {
+			int mid = left + (right - left) / 2;
+			if (array[mid] > target) {
+				right = mid;
+			}
+			else {
+				left  = mid + 1;
+			}
+		}
+		return left;
+	}
+	
+	// Time complexity is O(n*log(n)*log(N)), N = Integer.MAX_VALUE;
+	// Space complexity is O(1).
 }
+
+
