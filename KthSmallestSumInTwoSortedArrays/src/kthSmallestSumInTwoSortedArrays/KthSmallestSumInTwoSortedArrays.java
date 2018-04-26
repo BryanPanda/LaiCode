@@ -52,18 +52,6 @@ public class KthSmallestSumInTwoSortedArrays {
 		return minHeap.poll().val;
 	}
 
-	// Time complexity is O(m*n).
+	// Time complexity is O(k*log(k)).
 	// Space complexity is O(m*n).
-
-	public static void main(String[] args) {
-		KthSmallestSumInTwoSortedArrays kthSmallestSumInTwoSortedArrays = new KthSmallestSumInTwoSortedArrays();
-		int[] A = new int[] { 1, 3, 5, 8, 9 };
-		int[] B = new int[] { 2, 3, 4, 7 };
-		System.out.println(kthSmallestSumInTwoSortedArrays.kthSum(A, B, 1));
-		System.out.println(kthSmallestSumInTwoSortedArrays.kthSum(A, B, 2));
-		System.out.println(kthSmallestSumInTwoSortedArrays.kthSum(A, B, 3));
-		System.out.println(kthSmallestSumInTwoSortedArrays.kthSum(A, B, 4));
-		System.out.println(kthSmallestSumInTwoSortedArrays.kthSum(A, B, 17));
-	}
-
 }
