@@ -18,4 +18,6 @@ public class NumberOfNodesLinkedList {
 
 	// Time complexity is O(n).
 	// Space complexity is O(1).
+	
+	// Alternatively, you can use a tail recursion with O(n) time and O(n) space.
 }
