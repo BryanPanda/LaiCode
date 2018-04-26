@@ -1,5 +1,7 @@
 package checkCycleLinkedList;
 
+// LeetCode #141 (Linked List Cycle).
+
 // Check if a given linked list has a cycle. Return true if it does, otherwise return false.
 
 public class CheckCycleLinkedList {
@@ -21,22 +23,4 @@ public class CheckCycleLinkedList {
 	
 	// Time complexity is O(n).
 	// Space complexity is O(1).
-
-	public static void main(String[] args) {
-		CheckCycleLinkedList checkCycleLinkedList = new CheckCycleLinkedList();
-		ListNode head = null;
-		System.out.println(checkCycleLinkedList.hasCycle(head));
-		head = new ListNode(1);
-		System.out.println(checkCycleLinkedList.hasCycle(head));
-		head = new ListNode(new int[] { 1, 2 });
-		System.out.println(checkCycleLinkedList.hasCycle(head));
-		head.next.next = head;
-		System.out.println(checkCycleLinkedList.hasCycle(head));
-		head = new ListNode(new int[] { 1, 2, 3 });
-		System.out.println(checkCycleLinkedList.hasCycle(head));
-		ListNode temp = head.next;
-		head.next.next.next = temp;
-		System.out.println(checkCycleLinkedList.hasCycle(head));
-	}
-
 }
