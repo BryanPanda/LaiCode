@@ -6,11 +6,10 @@ package cycleNodeInLinkedList;
 public class CycleNodeInLinkedList {
 
 	public ListNode cycleNode(ListNode head) {
-		if (!hasCycle(head)) {
+		ListNode fast = meetingPoint(head);
+		if (fast == null) { // no cycle
 			return null;
 		}
-		// has cycle
-		ListNode fast = meetingPoint(head);
 		ListNode slow = head;
 		while (slow != fast) {
 			slow = slow.next;
@@ -19,49 +18,18 @@ public class CycleNodeInLinkedList {
 		return slow;
 	}
 
-	private boolean hasCycle(ListNode head) {
-		if (head == null) {
-			return false;
-		}
+	private ListNode meetingPoint(ListNode head) {
 		ListNode slow = head, fast = head;
 		while (fast != null && fast.next != null) {
 			slow = slow.next;
 			fast = fast.next.next;
 			if (slow == fast) {
-				return true;
+				return slow;
 			}
 		}
-		return false;
-	}
-
-	private ListNode meetingPoint(ListNode head) {
-		// guaranteed head != null, and has cycle
-		ListNode slow = head, fast = head;
-		slow = slow.next;
-		fast = fast.next.next; // so no NullPointerException
-		while (slow != fast) {
-			slow = slow.next;
-			fast = fast.next.next;
-		}
-		return fast;
+		return null;
 	}
 
 	// Time complexity is O(n).
 	// Space complexity is O(1).
-
-	public static void main(String[] args) {
-		CycleNodeInLinkedList cycleNodeInLinkedList = new CycleNodeInLinkedList();
-		ListNode head = null;
-		System.out.println(cycleNodeInLinkedList.cycleNode(head));
-		head = new ListNode(1);
-		head.next = head;
-		System.out.println(cycleNodeInLinkedList.cycleNode(head).value);
-		head = new ListNode(new int[] { 1, 2 });
-		head.next.next = head.next;
-		System.out.println(cycleNodeInLinkedList.cycleNode(head).value);
-		head = new ListNode(new int[] { 1, 2 });
-		head.next.next = head;
-		System.out.println(cycleNodeInLinkedList.cycleNode(head).value);
-	}
-
 }
