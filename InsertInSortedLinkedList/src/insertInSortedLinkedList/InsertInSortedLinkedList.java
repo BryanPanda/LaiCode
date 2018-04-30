@@ -24,19 +24,4 @@ public class InsertInSortedLinkedList {
 
 	// Time complexity is O(n).
 	// Space complexity is O(1).
-
-	public static void main(String[] args) {
-		InsertInSortedLinkedList insertInSortedLinkedList = new InsertInSortedLinkedList();
-		ListNode head = null;
-		System.out.println(insertInSortedLinkedList.insert(head, 99));
-		head = new ListNode(1);
-		System.out.println(insertInSortedLinkedList.insert(head, 99));
-		head = new ListNode(new int[] { 1, 2 });
-		System.out.println(insertInSortedLinkedList.insert(head, 1));
-		head = new ListNode(new int[] { 1, 2, 3 });
-		System.out.println(insertInSortedLinkedList.insert(head, 2));
-		head = new ListNode(new int[] { 1, 1, 1 });
-		System.out.println(insertInSortedLinkedList.insert(head, 1));
-	}
-
 }
