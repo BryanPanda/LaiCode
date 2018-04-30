@@ -1,6 +1,6 @@
 package mergeTwoSortedLinkedList;
 
-// LeetCode #21
+// LeetCode #21 (Merge Two Sorted Lists).
 
 // Merge two sorted lists into one large sorted list.
 
