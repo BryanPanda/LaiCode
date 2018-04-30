@@ -67,15 +67,4 @@ public class ReorderLinkedList {
 
 	// Time complexity is O(n).
 	// Space complexity is O(1).
-
-	public static void main(String[] args) {
-		ReorderLinkedList reorderLinkedList = new ReorderLinkedList();
-		ListNode head = null;
-		System.out.println(reorderLinkedList.reorder(head));
-		head = new ListNode(new int[] { 1, 2, 3 });
-		System.out.println(reorderLinkedList.reorder(head));
-		head = new ListNode(new int[] { 1, 2, 3, 4 });
-		System.out.println(reorderLinkedList.reorder(head));
-	}
-
 }
