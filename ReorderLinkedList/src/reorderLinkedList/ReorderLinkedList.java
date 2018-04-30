@@ -46,12 +46,6 @@ public class ReorderLinkedList {
 	}
 
 	private ListNode merge(ListNode one, ListNode two) {
-		if (one == null) {
-			return two;
-		}
-		if (two == null) {
-			return one;
-		}
 		ListNode dummy = new ListNode(0), cur = dummy;
 		while (one != null && two != null) {
 			cur.next = one;
