@@ -7,13 +7,6 @@ package mergeTwoSortedLinkedList;
 public class MergeTwoSortedLinkedList {
 
 	public ListNode merge(ListNode one, ListNode two) {
-		if (one == null) {
-			return two;
-		}
-		if (two == null) {
-			return one;
-		}
-		// up to this point, one != null && two != null
 		ListNode dummy = new ListNode(0);
 		ListNode cur = dummy;
 		while (one != null && two != null) {
