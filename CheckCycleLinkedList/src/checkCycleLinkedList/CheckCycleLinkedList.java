@@ -7,9 +7,6 @@ package checkCycleLinkedList;
 public class CheckCycleLinkedList {
 
 	public boolean hasCycle(ListNode head) {
-		if (head == null) {
-			return false;
-		}
 		ListNode slow = head, fast = head;
 		while (fast != null && fast.next != null) {
 			slow = slow.next;
