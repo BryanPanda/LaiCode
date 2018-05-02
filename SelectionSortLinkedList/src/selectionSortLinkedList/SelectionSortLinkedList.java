@@ -6,9 +6,6 @@ package selectionSortLinkedList;
 public class SelectionSortLinkedList {
 
 	public ListNode sort(ListNode head) {
-		if (head == null || head.next == null) {
-			return head;
-		}
 		for (ListNode cur = head; cur != null; cur = cur.next) {
 			ListNode min = cur;
 			for (ListNode iter = cur; iter != null; iter = iter.next) {
@@ -26,24 +23,4 @@ public class SelectionSortLinkedList {
 
 	// Time complexity is O(n).
 	// Space complexity is O(1).
-
-	public static void main(String[] args) {
-		SelectionSortLinkedList selectionSortLinkedList = new SelectionSortLinkedList();
-
-		ListNode head = null;
-		ListNode result = selectionSortLinkedList.sort(head);
-		System.out.println(result);
-
-		head = new ListNode(1);
-		result = selectionSortLinkedList.sort(head);
-		System.out.println(result);
-
-		head = new ListNode(new int[] { 1, 2, 3 });
-		result = selectionSortLinkedList.sort(head);
-		System.out.println(result);
-
-		head = new ListNode(new int[] { 4, 2, 6, 3, 5 });
-		result = selectionSortLinkedList.sort(head);
-		System.out.println(result);
-	}
 }
