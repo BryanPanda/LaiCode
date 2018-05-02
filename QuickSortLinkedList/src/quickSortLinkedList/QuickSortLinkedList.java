@@ -1,5 +1,7 @@
 package quickSortLinkedList;
 
+// LeetCode #148 (Sort List).
+
 // Given a singly-linked list, where each node contains an integer value, sort it in ascending order. 
 // The quick sort algorithm should be used to solve this problem.
 
@@ -85,33 +87,4 @@ public class QuickSortLinkedList {
 	// O(n*log(n)) in the best and average cases.
 	// Space complexity is O(n) in the worst case, and
 	// O(log(n)) in the best and average cases, because of call-stack.
-
-	public static void main(String[] args) {
-		QuickSortLinkedList mergeSortLinkedList = new QuickSortLinkedList();
-
-		ListNode head = null;
-		ListNode result = mergeSortLinkedList.sort(head);
-		System.out.println(result);
-
-		head = new ListNode(1);
-		result = mergeSortLinkedList.sort(head);
-		System.out.println(result);
-
-		head = new ListNode(new int[] { 1, 2, 3 });
-		result = mergeSortLinkedList.sort(head);
-		System.out.println(result);
-
-		head = new ListNode(new int[] { 4, 2, 6, 3, 5 });
-		result = mergeSortLinkedList.sort(head);
-		System.out.println(result);
-
-		head = new ListNode(new int[] { 3, 7, 6, 2 });
-		result = mergeSortLinkedList.sort(head);
-		System.out.println(result);
-
-		head = new ListNode(new int[] { 2, 3, 20, 5, 10, 15 });
-		result = mergeSortLinkedList.sort(head);
-		System.out.println(result);
-	}
-
 }

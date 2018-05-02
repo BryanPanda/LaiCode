@@ -52,5 +52,5 @@ public class MergeSortLinkedList {
 	}
 
 	// Time complexity is O(n*log(n)).
-	// Space complexity is O(1).
+	// Space complexity is O(log(n)), because of call-stack.
 }
