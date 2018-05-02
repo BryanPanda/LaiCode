@@ -18,13 +18,12 @@ public class QuickSortLinkedList {
 
 	private ListNode getTail(ListNode head) {
 		ListNode cur = head;
-		if (cur == null || cur.next == null) {
+		if (cur == null) {
 			return cur;
 		}
 		while (cur.next != null) {
 			cur = cur.next;
 		}
-		// up to this point, cur.next = null
 		return cur;
 	}
 
@@ -85,6 +84,7 @@ public class QuickSortLinkedList {
 
 	// Time complexity is O(n^2) in the worst case, and
 	// O(n*log(n)) in the best and average cases.
+	
 	// Space complexity is O(n) in the worst case, and
 	// O(log(n)) in the best and average cases, because of call-stack.
 }

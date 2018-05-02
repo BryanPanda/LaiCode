@@ -1,6 +1,8 @@
 package queueByTwoStacks;
 
-import java.util.*;
+import java.util.LinkedList;
+
+// LeetCode #232 (Implement Queue Using Stacks).
 
 // Implement a queue by using two stacks. The queue should provide size(), isEmpty(), offer(), poll()
 // and peek() operations. When the queue is empty, poll() and peek() should return null.
@@ -11,8 +13,8 @@ public class QueueByTwoStacks {
 	private LinkedList<Integer> output;
 
 	public QueueByTwoStacks() {
-		input = new LinkedList<Integer>();
-		output = new LinkedList<Integer>();
+		input = new LinkedList<>();
+		output = new LinkedList<>();
 	}
 
 	public Integer poll() {
