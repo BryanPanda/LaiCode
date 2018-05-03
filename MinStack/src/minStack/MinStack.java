@@ -1,6 +1,8 @@
 package minStack;
 
-import java.util.*;
+import java.util.LinkedList;
+
+// LeetCode #155 (Min Stack).
 
 public class MinStack {
 
@@ -24,11 +26,10 @@ public class MinStack {
 
 	public void push(int element) {
 		stack.offerFirst(element);
-		if (min.isEmpty()) {
-			min.offerFirst(element);
-		} else {
-			min.offerFirst(Math.min(min.peekFirst(), element));
-		}
+		min.offerFirst(
+			(min.isEmpty() || min.peekFirst() > element) 
+			? element 
+			: min.peekFirst());
 	}
 
 	// Time complexity is O(1).
