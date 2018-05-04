@@ -1,6 +1,10 @@
 package binaryTreeTraversal;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.LinkedList;
+
+// LeetCode #94 (Binary Tree Inorder Traversal).
 
 public class InOrder {
 
@@ -56,11 +60,10 @@ public class InOrder {
 				while (node.right != null && node.right != cur) {
 					node = node.right;
 				}
-				// node.right == null || node.right == cur
-				if (node.right == null) {
+				if (node.right == null) { // traversing down
 					node.right = cur;
 					cur = cur.left;
-				} else {
+				} else { // traversing up
 					node.right = null;
 					result.add(cur.key);
 					cur = cur.right;
@@ -73,5 +76,4 @@ public class InOrder {
 	// Time complexity is O(n).
 	// Space complexity is O(1).
 	// No stack overflow.
-
 }
