@@ -1,6 +1,10 @@
 package binaryTreeTraversal;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.LinkedList;
+
+// LeetCode #144 (Binary Tree Preorder Traversal).
 
 public class PreOrder {
 
@@ -57,12 +61,11 @@ public class PreOrder {
 				while (node.right != null && node.right != cur) {
 					node = node.right;
 				}
-				// node.right == null || node.right == cur
-				if (node.right == null) {
-					node.right = cur;
+				if (node.right == null) { // traversing down
 					result.add(cur.key);
+					node.right = cur;
 					cur = cur.left;
-				} else {
+				} else { // traversing up
 					node.right = null;
 					cur = cur.right;
 				}
@@ -74,5 +77,4 @@ public class PreOrder {
 	// Time complexity is O(n).
 	// Space complexity is O(1).
 	// No stack overflow.
-
 }
