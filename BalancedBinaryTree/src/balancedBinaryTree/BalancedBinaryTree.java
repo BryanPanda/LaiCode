@@ -1,14 +1,13 @@
 package balancedBinaryTree;
 
+// LeetCode #110 (Balanced Binary Tree).
+
 // Check if a given binary tree is balanced. A balanced binary tree is one 
 // in which the depths of every node’s left and right subtree differ by at most 1.
 
 public class BalancedBinaryTree {
 
 	public boolean isBalanced(TreeNode root) {
-		if (root == null) {
-			return true;
-		}
 		return height(root) != -1;
 	}
 
