@@ -1,6 +1,8 @@
 package symmetricBinaryTree;
 
-import java.util.*;
+import java.util.LinkedList;
+
+// LeetCode #101 (Symmetric Tree).
 
 // Check if a given binary tree is symmetric.
 
@@ -26,9 +28,10 @@ public class SymmetricBinaryTree {
 	}
 
 	// Time complexity is O(n).
-	// Space complexity is O(n), when the binary tree is highly unbalanced.
+	// Space complexity is O(log(n)). Note that the worst case is when the binary
+	// tree is balanced.
 
-	// tail recursion, can be converted to a recursive solution
+	// tail recursion, can be converted to an iterative solution
 	public boolean isSymmetric2(TreeNode root) {
 		if (root == null) {
 			return true;
