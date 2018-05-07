@@ -38,7 +38,6 @@ public class CompleteBinaryTree {
 	}
 
 	// Time complexity is O(n).
-	// Space complexity is O(n) in the worst case, when the binary tree is
-	// highly unbalanced.
-
+	// Space complexity is O(n), since the last layer of a binary tree contains 
+	// half the total number of nodes.
 }
