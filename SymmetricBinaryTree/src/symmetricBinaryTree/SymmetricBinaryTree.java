@@ -28,8 +28,7 @@ public class SymmetricBinaryTree {
 	}
 
 	// Time complexity is O(n).
-	// Space complexity is O(n). Note that the worst case is when the binary
-	// tree is balanced.
+	// Space complexity is O(n).
 
 	// tail recursion, can be converted to an iterative solution
 	public boolean isSymmetric2(TreeNode root) {
