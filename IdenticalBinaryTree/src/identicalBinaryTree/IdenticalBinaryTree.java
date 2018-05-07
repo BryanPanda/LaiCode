@@ -1,6 +1,8 @@
 package identicalBinaryTree;
 
-import java.util.*;
+import java.util.LinkedList;
+
+// LeetCode #100 (Same Tree).
 
 // Check if two given binary trees are identical. Identical means
 // the equal valued keys are at the same position in the two binary trees.
