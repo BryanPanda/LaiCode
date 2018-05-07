@@ -22,7 +22,7 @@ public class IdenticalBinaryTree {
 	}
 
 	// Time complexity is O(n).
-	// Space complexity is O(n), when the binary tree is highly unbalanced.
+	// Space complexity is O(n).
 
 	// tail recursion, can be converted to an iterative solution
 	public boolean isIdentical2(TreeNode one, TreeNode two) {
