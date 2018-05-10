@@ -1,5 +1,7 @@
 package binarySearchTree;
 
+// LeetCode #450 (Delete Node in BST).
+
 public class BinarySearchTree {
 
 	private TreeNode root;
@@ -34,7 +36,7 @@ public class BinarySearchTree {
 		// up to this point, cur == null || cur.key == key
 		return cur;
 	}
-
+	
 	// put or insert method
 	public void insert(int key) {
 		root = insert1(root, key);
@@ -84,50 +86,57 @@ public class BinarySearchTree {
 
 	// delete or remove method
 	public void delete(int key) {
-		root = delete(root, key);
+		root = delete1(root, key);
 	}
 
-	private TreeNode delete(TreeNode x, int key) {
+	// recursive solution
+	private TreeNode delete1(TreeNode x, int key) {
 		if (x == null) {
 			return null;
 		}
 
 		if (x.key < key) {
-			x.right = delete(x.right, key);
+			x.right = delete1(x.right, key);
 			return x;
 		} else if (x.key > key) {
-			x.left = delete(x.left, key);
+			x.left = delete1(x.left, key);
 			return x;
 		}
-
+		
 		// up to this point, x != null && x.key == key
-		// case 1: no children, neither on the left, nor on the right
-		// case 2: no left child
-		// case 3: no right child
-		if (x.left == null) {
-			return x.right;
-		} else if (x.right == null) {
-			return x.left;
-		}
-
-		// up to this point: x != null && x.key == key
-		// && x.left != null && x.right != null
-		// case 4: have left child, and have right child
-		// let's pick the smallest from the right sub-tree of x
-		// case 4.1: x.right has no left child
-		if (x.right.left == null) {
-			x.right.left = x.left;
-			return x.right;
-		}
-
-		// case 4.2: x.right has left child
-		// need to find and delete the smallest from x.right
-		TreeNode smallest = deleteSmallest(x.right);
-		smallest.left = x.left;
-		smallest.right = x.right;
-		return smallest;
+		return deleteRootNode(x);
 	}
 
+	private TreeNode deleteRootNode(TreeNode root) {
+        if (root == null) {
+            return null;
+        }
+        // case 1: no children, neither on the left, nor on the right
+		// case 2: no left child
+		// case 3: no right child
+		if (root.left == null) {
+			return root.right;
+		} else if (root.right == null) {
+			return root.left;
+		}
+
+		// up to this point, root.left != null && root.right != null
+		// case 4: have left child, and have right child
+		// let's pick the smallest from the right sub-tree of root
+		// case 4.1: root.right has no left child
+		if (root.right.left == null) {
+			root.right.left = root.left;
+			return root.right;
+		}
+
+		// case 4.2: root.right has left child
+		// need to find and delete the smallest from root.right
+		TreeNode smallest = deleteSmallest(root.right);
+		smallest.left = root.left;
+		smallest.right = root.right;
+		return smallest;
+	}
+	
 	// given a TreeNode cur, find and delete the smallest node
 	// from its right sub-tree
 	private TreeNode deleteSmallest(TreeNode cur) {
@@ -143,5 +152,37 @@ public class BinarySearchTree {
 		prev.left = prev.left.right;
 		return cur;
 	}
-
+	
+	// iterative solution
+	private TreeNode delete2(TreeNode root, int key) {
+		TreeNode cur = root, prev = null;
+		while (cur != null && cur.key != key) {
+			prev = cur;
+			if (cur.key < key) {
+				cur = cur.right;
+			}
+			else if (cur.key > key) {
+				cur = cur.left;
+			}
+		}
+		// cur == null || cur.key == key
+		if (prev == null) {
+			return deleteRootNode(cur);
+		}
+		if (prev.left == cur) {
+			prev.left = deleteRootNode(cur);
+		}
+		else {
+			prev.right = deleteRootNode(cur);
+		}
+		return root;
+	}
+	
+	// For all of the three operations, the following complexity analysis holds:
+	
+	// Time complexity is O(n), when the binary tree is highly unbalanced.
+	// Space complexity is O(n), when the binary tree is highly unbalanced.
+	
+	// Time complexity is O(n), when the binary tree is highly unbalanced.
+	// Space complexity is O(1).
 }
