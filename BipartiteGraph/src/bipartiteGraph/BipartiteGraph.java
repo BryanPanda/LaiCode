@@ -5,25 +5,26 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
+// LeetCode #785 (Is Graph Bipartite?).
+
 // Determine if an undirected graph is bipartite. A bipartite graph is one in which
 // the nodes can be divided into two groups such that no nodes have direct edges to
 // other nodes in the same group.
 
 public class BipartiteGraph {
 
+	// BFS (with queue)
 	public boolean isBipartite(List<GraphNode> graph) {
 		Map<GraphNode, Integer> visited = new HashMap<>();
 		for (GraphNode node : graph) {
-			if (!helper(node, visited)) {
+			if (!validate(node, visited)) {
 				return false;
 			}
 		}
 		return true;
 	}
 
-	// return true, if node has been visited, or node has not been visited,
-	// but all its neighbors are in a different group
-	public boolean helper(GraphNode node, Map<GraphNode, Integer> visited) {
+	public boolean validate(GraphNode node, Map<GraphNode, Integer> visited) {
 		if (visited.containsKey(node)) {
 			return true;
 		}
@@ -36,17 +37,15 @@ public class BipartiteGraph {
 				if (!visited.containsKey(neighbor)) {
 					queue.offerLast(neighbor);
 					visited.put(neighbor, 1 - visited.get(cur));
-				} else {
-					if (visited.get(neighbor) != 1 - visited.get(cur)) {
-						return false;
-					}
+				} 
+				else if (visited.get(neighbor) != 1 - visited.get(cur)) {
+					return false;
 				}
 			}
 		}
 		return true;
 	}
 
-	// Time complexity is O(n+m).
+	// Time complexity is O(m + n).
 	// Space complexity is O(n).
-
 }
