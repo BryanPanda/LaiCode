@@ -48,4 +48,7 @@ public class BipartiteGraph {
 
 	// Time complexity is O(m + n).
 	// Space complexity is O(n).
+	
+	// DFS solution is possible with a different problem definition, see discussions 
+	// about LeetCode #785 for more details.
 }
