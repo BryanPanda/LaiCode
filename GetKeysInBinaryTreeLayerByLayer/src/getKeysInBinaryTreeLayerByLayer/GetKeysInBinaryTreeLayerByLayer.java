@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
+// LeetCode #102 (Binary Tree Level Order Traversal).
+
 // Get the list of list of keys in a given binary tree layer by layer. 
 // Each layer is represented by a list of keys and the keys are traversed from left to right.
 
@@ -17,11 +19,11 @@ public class GetKeysInBinaryTreeLayerByLayer {
 		LinkedList<TreeNode> queue = new LinkedList<>();
 		queue.offerLast(root);
 		while (!queue.isEmpty()) {
-			List<Integer> temp = new ArrayList<>();
+			List<Integer> curLevel = new ArrayList<>();
 			int size = queue.size();
 			for (int i = 0; i < size; i++) {
 				TreeNode cur = queue.pollFirst();
-				temp.add(cur.key);
+				curLevel.add(cur.key);
 				if (cur.left != null) {
 					queue.offerLast(cur.left);
 				}
@@ -29,12 +31,11 @@ public class GetKeysInBinaryTreeLayerByLayer {
 					queue.offerLast(cur.right);
 				}
 			}
-			result.add(temp);
+			result.add(curLevel);
 		}
 		return result;
 	}
 
 	// Time complexity is O(n).
 	// Space complexity is O(n).
-
 }
