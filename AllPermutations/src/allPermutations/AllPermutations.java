@@ -1,8 +1,9 @@
 package allPermutations;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
+
+// LeetCode #46 (Permutations).
 
 // Given a string with no duplicate characters, return a list with all permutations
 // of the characters.
@@ -43,11 +44,4 @@ public class AllPermutations {
 
 	// Time complexity is O(n + n*(n-1) + n*(n-1)*(n-2) + ... + n!) = O(n!)
 	// Space complexity is O(n) because of call-stack.
-
-	public static void main(String[] args) {
-		AllPermutations allPermutations = new AllPermutations();
-		String set = "abc";
-		System.out.println(Arrays.toString(allPermutations.permutations(set).toArray()));
-	}
-
 }
