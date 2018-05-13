@@ -3,6 +3,8 @@ package allSubsets;
 import java.util.ArrayList;
 import java.util.List;
 
+// LeetCode #78 (Subsets).
+
 // Given a set of characters represented by a String, return a list containing all subsets of the characters.
 
 // Assumption: There are no duplicate characters in the original set.
@@ -38,13 +40,5 @@ public class AllSubsets {
 	// Space complexity is O(n), because of call-stack.
 
 	// Notice: If DFS uses a for loop (as in permutations), then
-	// append-DFS-remove.
-	// If no for loop, then append-DFS-remove-DFS.
-
-	public static void main(String[] args) {
-		AllSubsets allSubsets = new AllSubsets();
-		String set = "abc";
-		System.out.println(allSubsets.subSets(set).toString());
-	}
-
+	// append-DFS-remove. If no for loop, then append-DFS-remove-DFS.
 }
