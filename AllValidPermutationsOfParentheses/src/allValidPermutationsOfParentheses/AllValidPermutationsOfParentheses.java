@@ -3,7 +3,7 @@ package allValidPermutationsOfParentheses;
 import java.util.ArrayList;
 import java.util.List;
 
-// LeetCode #22
+// LeetCode #22 (Generate Parentheses).
 
 // Given N pairs of parentheses “()”, return a list with all the valid permutations.
 // Assumption: n > 0
@@ -42,3 +42,4 @@ public class AllValidPermutationsOfParentheses {
 	// is not tight, because some branches are cut off.
 	// Space complexity is O(n), because of call-stack.
 }
+
