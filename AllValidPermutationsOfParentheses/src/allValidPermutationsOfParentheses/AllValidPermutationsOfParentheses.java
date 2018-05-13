@@ -17,23 +17,23 @@ public class AllValidPermutationsOfParentheses {
 			return result;
 		}
 		StringBuilder sb = new StringBuilder();
-		DFS(0, 0, 0, n, sb, result);
+		DFS(0, 0, n, sb, result);
 		return result;
 	}
 
-	private void DFS(int level, int left, int right, int n, StringBuilder sb, List<String> result) {
-		if (level == 2 * n) {
+	private void DFS(int left, int right, int n, StringBuilder sb, List<String> result) {
+		if (sb.length() == 2 * n) {
 			result.add(sb.toString());
 			return;
 		}
 		if (left < n) {
 			sb.append("(");
-			DFS(level + 1, left + 1, right, n, sb, result);
+			DFS(left + 1, right, n, sb, result);
 			sb.deleteCharAt(sb.length() - 1);
 		}
 		if (right < left) {
 			sb.append(")");
-			DFS(level + 1, left, right + 1, n, sb, result);
+			DFS(left, right + 1, n, sb, result);
 			sb.deleteCharAt(sb.length() - 1);
 		}
 	}
