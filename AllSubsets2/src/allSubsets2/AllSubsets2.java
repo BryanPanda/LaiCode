@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+// LeetCode #90 (Subsets II).
+
 // Given a set of characters represented by a String, return a list
 // containing all subsets of the characters.
 
@@ -43,11 +45,4 @@ public class AllSubsets2 {
 
 	// Time complexity is O(2^n).
 	// Space complexity is O(n), because of call-stack.
-
-	public static void main(String[] args) {
-		AllSubsets2 allSubsets2 = new AllSubsets2();
-		String set = "abbb";
-		System.out.println(allSubsets2.subSets(set).toString());
-	}
-
 }
