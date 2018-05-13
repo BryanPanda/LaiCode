@@ -47,6 +47,6 @@ public class AllPermutations2 {
 		array[j] = temp;
 	}
 
-	// Time complexity is O(n!).
-	// Space complexity is O(n), because of call-stack.
+	// Time complexity is O(n + n*(n-1) + n*(n-1)*(n-2) + ... + n!) = O(n!)
+	// Space complexity is O(n) because of call-stack.
 }
