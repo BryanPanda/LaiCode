@@ -5,6 +5,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.PriorityQueue;
 
+// LeetCode #692 (Top KFrequenct Words).
+
 // Given a composition with different kinds of words, return a list
 // of the top K most frequent words in the composition.
 
@@ -21,15 +23,16 @@ public class TopKFrequentWords {
 				new Comparator<Map.Entry<String, Integer>>() {
 					@Override
 					public int compare(Map.Entry<String, Integer> e1, Map.Entry<String, Integer> e2) {
+						if (e1.getValue().equals(e2.getValue())) { // use .equals(...), == only works for Integer in [-128, 127]
+							return e2.getKey().compareTo(e1.getKey()); // notice: minHeap -> order of compareTo(...)
+						}
 						return e1.getValue().compareTo(e2.getValue());
 					}
 				});
 		for (Map.Entry<String, Integer> entry : map.entrySet()) {
-			if (minHeap.size() < k) {
-				minHeap.offer(entry);
-			} else if (entry.getValue() > minHeap.peek().getValue()) {
+			minHeap.offer(entry);
+			if (minHeap.size() > k) {
 				minHeap.poll();
-				minHeap.offer(entry);
 			}
 		}
 		String[] result = new String[minHeap.size()];
