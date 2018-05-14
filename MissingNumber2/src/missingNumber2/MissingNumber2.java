@@ -24,11 +24,10 @@ public class MissingNumber2 {
 		// post-processing
 		if (array[left] - left == 2) {
 			return array[left] - 1;
-		} else if (array[right] - array[right - 1] == 1) {
-			// right might be at the end of array
-			return array[right] + 1;
-		} else {
+		} else if (array[right] - right == 2) {
 			return array[right] - 1;
+		} else {
+			return array[right] + 1;
 		}
 	}
 
