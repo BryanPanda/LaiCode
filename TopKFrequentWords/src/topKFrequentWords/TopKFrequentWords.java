@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.PriorityQueue;
 
-// LeetCode #692 (Top KFrequenct Words).
+// LeetCode #692 (Top K Frequent Words).
 
 // Given a composition with different kinds of words, return a list
 // of the top K most frequent words in the composition.
