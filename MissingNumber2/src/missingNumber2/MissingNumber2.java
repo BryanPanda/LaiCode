@@ -34,3 +34,4 @@ public class MissingNumber2 {
 	// Time complexity is O(log(n)).
 	// Space complexity is O(1).
 }
+
