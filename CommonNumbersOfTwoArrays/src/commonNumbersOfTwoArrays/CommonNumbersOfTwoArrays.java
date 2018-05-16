@@ -1,10 +1,10 @@
 package commonNumbersOfTwoArrays;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-
 
 // LeetCode #349 (Intersection of Two Arrays).
 
@@ -19,6 +19,8 @@ public class CommonNumbersOfTwoArrays {
 		Set<Integer> set = new HashSet<>();
 		set.addAll(a);
 		set.retainAll(b);
+		List<Integer> result = new ArrayList<Integer>(set);
+		Collections.sort(result);
 		return new ArrayList<Integer>(set);
 	}
 	
