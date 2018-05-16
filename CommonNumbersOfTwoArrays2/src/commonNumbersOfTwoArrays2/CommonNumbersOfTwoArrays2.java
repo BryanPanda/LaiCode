@@ -26,6 +26,7 @@ public class CommonNumbersOfTwoArrays2 {
 			Integer frequency = map.get(i);
 			if (frequency != null && frequency > 0) {
 				result.add(i);
+				map.put(i, frequency - 1);
 			}
 		}
 		Collections.sort(result);
