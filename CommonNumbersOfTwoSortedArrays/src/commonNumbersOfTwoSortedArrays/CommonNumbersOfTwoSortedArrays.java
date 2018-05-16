@@ -32,10 +32,9 @@ public class CommonNumbersOfTwoSortedArrays {
 	}
 
 	// Time complexity is O(m + n).
-	// Space complexity is O(m), could be O(min(m, n)).
+	// Space complexity is O(max(m, n)).
 
 	public List<Integer> common2(List<Integer> A, List<Integer> B) {
-		// A and B are sorted
 		List<Integer> result = new ArrayList<>();
 		int i = 0, j = 0;
 		while (i < A.size() && j < B.size()) {
@@ -55,10 +54,9 @@ public class CommonNumbersOfTwoSortedArrays {
 	// Time complexity is O(m + n).
 	// Space complexity is O(1).
 
-	// If m << n, another solution could be: for each element in A, run Binary
-	// Search in B.
+	// If m << n, another solution could be: for each element in A, run binary search in B.
 	// Time complexity is O(m * log(n)).
-	// But how to handle duplicate elements? For example,
-	// A = [5000, 5000, 5000], B = [1, 2, 3, ..., 9999], need to keep a set of
-	// indices, so Space Complexity is O(m).
+	// But how to handle duplicate elements? For example, A = [5000, 5000, 5000], B = [1, 2, 3, ..., 9999].
+	// Need to keep a set of indices, so space complexity is O(m).
 }
+
