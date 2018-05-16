@@ -35,4 +35,11 @@ public class CommonNumbersOfTwoArrays2 {
 	
 	// Time complexity is O(m + n).
 	// Space complexity is O(max(m, n)).
+	
+	// Follow up: What if neither of the two lists can fit into memory?
+	//   a. For each of the two arrays, split it into sub-arrays that can fit into 
+	//      memory, sort each sub-array, then merge k sorted arrays.
+	//   b. Read a pair of values at a time, one from the first array, the other
+	//      from the second array. If equal, add to the result, otherwise, throw the 
+	//      smaller value away, and read the next value from the same array.
 }
