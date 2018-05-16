@@ -5,6 +5,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+// LeetCode #350 (Intersection of Two Arrays II) follow up.
+
 // Find all numbers that appear in both of two sorted arrays (the two arrays are all sorted in ascending order).
 
 // Assumption:
