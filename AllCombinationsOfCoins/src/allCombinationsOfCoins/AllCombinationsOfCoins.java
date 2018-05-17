@@ -1,7 +1,7 @@
 package allCombinationsOfCoins;
 
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
 
 // Given a number of different denominations of coins (e.g., 1 cent, 5 cents, 10 cents, 25 cents), 
 // get all the possible ways to pay a target number of cents.
@@ -38,12 +38,4 @@ public class AllCombinationsOfCoins {
 
 	// Time complexity is O(target^n), where n is the number of coin types.
 	// Space complexity is O(n).
-
-	public static void main(String[] agrs) {
-		AllCombinationsOfCoins allCombinationsOfCoins = new AllCombinationsOfCoins();
-		int target = 13;
-		int[] coins = new int[] { 5, 2, 1 };
-		System.out.println(allCombinationsOfCoins.combinations(target, coins).toString());
-	}
-
 }
