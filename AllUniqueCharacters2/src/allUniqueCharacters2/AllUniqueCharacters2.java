@@ -21,4 +21,5 @@ public class AllUniqueCharacters2 {
 		}
 		return true;
 	}
+	
 }
