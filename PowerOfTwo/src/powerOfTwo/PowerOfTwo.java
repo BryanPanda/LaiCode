@@ -10,7 +10,6 @@ public class PowerOfTwo {
 		if (number <= 0) {
 			return false;
 		}
-		// ignore all trailing 0's
 		while ((number & 1) == 0) {
 			number >>>= 1;
 		}
