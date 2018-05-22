@@ -2,9 +2,12 @@ package arrayDeduplication2;
 
 import java.util.Arrays;
 
+// LeetCode #80 (Remove Duplicates from Sorted Array II).
+
 // Given a sorted integer array, remove duplicate elements. 
 // For each group of elements with the same value keep at most two of them. 
 // Do this in-place, using the left side of the original array and maintain the relative order of the elements of the array. 
+
 // Return the array after deduplication.
 
 public class ArrayDeduplication2 {

@@ -2,7 +2,12 @@ package stringDeduplication2;
 
 import java.util.Arrays;
 
-// Remove adjacent, repeated characters in a given string, leaving only two characters for each group of such characters. 
+//LeetCode #80 (Remove Duplicates from Sorted Array II).
+
+
+// Remove adjacent, repeated characters in a given string, leaving 
+// only two characters for each group of such characters. 
+
 // The characters in the string are sorted in ascending order.
 
 public class StringDeduplication2 {
