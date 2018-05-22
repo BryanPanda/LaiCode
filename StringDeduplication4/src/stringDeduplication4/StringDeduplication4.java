@@ -12,21 +12,22 @@ public class StringDeduplication4 {
 			return input;
 		}
 		char[] array = input.toCharArray();
-		int end = -1; // including end
-		for (int fast = 0; fast < array.length; fast++) {
+		int end = -1, fast = 0; // including end
+		while (fast < array.length) {
 			if (end == -1 || array[fast] != array[end]) {
-				array[++end] = array[fast];
-			} else {
-				// end != -1 && array[fast] == array[end]
-				while (fast < array.length - 1 && array[fast] == array[fast + 1]) {
+				array[++end] = array[fast++];
+			} 
+			else {
+				while (fast < array.length - 1 && array[fast + 1] == array[fast]) {
 					fast++;
 				}
 				end--;
+				fast++;
 			}
 		}
 		return new String(Arrays.copyOf(array, end + 1));
 	}
 
 	// Time complexity is O(n).
-	// Space complexity is O(n).
+	// Space complexity is O(1).
 }
