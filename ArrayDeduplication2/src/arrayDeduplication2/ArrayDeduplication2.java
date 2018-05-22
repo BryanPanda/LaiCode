@@ -18,10 +18,9 @@ public class ArrayDeduplication2 {
 		}
 		int slow = 2; // not including slow
 		for (int fast = 2; fast < array.length; fast++) {
-			if (array[fast] == array[slow - 2]) {
-				continue;
+			if (array[fast] != array[slow - 2]) {
+				array[slow++] = array[fast];
 			}
-			array[slow++] = array[fast];
 		}
 		return Arrays.copyOf(array, slow);
 	}
