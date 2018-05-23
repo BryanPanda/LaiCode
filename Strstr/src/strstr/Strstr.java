@@ -1,6 +1,6 @@
 package strstr;
 
-// LeetCode #28
+// LeetCode #28 (Implement strStr()).
 
 // Determine if a small string is a substring of another large string.
 // Return the index of the first occurrence of the small string in the large string.
@@ -36,12 +36,12 @@ public class Strstr {
 		return true;
 	}
 
-	// Time Complexity is O(m*n),
+	// Time Complexity is O(m * n),
 	// where m is length of large, n is length of small.
 	// Space complexity is O(1).
 
+	// Rabin-Karp algorithm
 	public int strstr2(String large, String small) {
-		// write your solution here
 		if (large.length() < small.length()) {
 			return -1;
 		}
@@ -86,7 +86,9 @@ public class Strstr {
 		return hash;
 	}
 
-	// Time Complexity is O(m + n),
-	// where m is length of large, n is length of small.
+	// Time Complexity is O(m + n), where m is length of large, n is length of small.
 	// Space complexity is O(1).
+	
+	// KMP algorithm?
+	
 }
