@@ -24,7 +24,7 @@ public class ReverseWordsInASentence {
                 reverse(array, slow, fast);
             }
         }
-        reverse(array, 0, array.length - 1);
+        reverse(array, 0, array.length - 1); // remove for #557
         return new String(array);
 	}
     
