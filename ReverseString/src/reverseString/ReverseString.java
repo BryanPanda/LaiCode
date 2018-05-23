@@ -1,5 +1,7 @@
 package reverseString;
 
+// LeetCode #344 (Reverse String).
+
 // Reverse a given string.
 
 public class ReverseString {
@@ -28,8 +30,7 @@ public class ReverseString {
 
 	// recursive solution
 	public String reverse2(String input) {
-		// Write your solution here.
-		if (input.length() <= 1) {
+		if (input == null || input.length() <= 1) {
 			return input;
 		}
 		char[] array = input.toCharArray();
