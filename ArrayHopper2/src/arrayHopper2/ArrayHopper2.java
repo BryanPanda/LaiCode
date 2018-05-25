@@ -2,7 +2,7 @@ package arrayHopper2;
 
 import java.util.Arrays;
 
-// LeetCode 45 (Jump Game II).
+// LeetCode #45 (Jump Game II).
 
 // Given an array A of non-negative integers, you are initially positioned at index 0 of the array. 
 // A[i] means the maximum jump distance from index i (you can only jump towards the end of the array). 
