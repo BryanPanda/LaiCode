@@ -44,5 +44,4 @@ public class ArrayHopper4 {
 		return minJump[minJump.length - 1] == Integer.MAX_VALUE ? -1 : minJump[minJump.length - 1];
 	}
 
-
 }
