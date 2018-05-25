@@ -16,9 +16,6 @@ public class ArrayHopper2 {
 	// DP
 	// M[i]: from index 0, minimum number of jumps to index i
 	public int minJump(int[] array) {
-		if (array.length == 1) {
-			return 0;
-		}
 		int[] minJump = new int[array.length];
 		Arrays.fill(minJump, Integer.MAX_VALUE);
 		minJump[0] = 0;
