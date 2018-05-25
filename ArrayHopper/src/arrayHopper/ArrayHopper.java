@@ -30,12 +30,12 @@ public class ArrayHopper {
 	// Space complexity is O(n).
 
 	// greedy
-	public boolean canJump2(int[] nums) {
+	public boolean canJump2(int[] array) {
 		int max = 0;
-		for (int i = 0; i < nums.length; i++) {
-			max = max < i ? max : Math.max(max, i + nums[i]);
+		for (int i = 0; i < array.length; i++) {
+			max = max < i ? max : Math.max(max, i + array[i]);
 		}
-		return max >= nums.length - 1;
+		return max >= array.length - 1;
 	}
 
 	// Time complexity is O(n).
