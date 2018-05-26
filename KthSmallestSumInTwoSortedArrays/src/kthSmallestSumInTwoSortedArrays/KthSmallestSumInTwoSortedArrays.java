@@ -16,7 +16,7 @@ public class KthSmallestSumInTwoSortedArrays {
 	static class Cell {
 		int a;
 		int b;
-		int val;
+		int val = 0;
 
 		Cell(int a, int b, int val) {
 			this.a = a;
