@@ -1,5 +1,7 @@
 package buyStock3;
 
+//LeetCode #123 (Best Time to Buy and Sell Stock III).
+
 // Given an array of positive integers representing a stock’s price on each day. 
 // On each day you can only make one operation: either buy or sell one unit of stock, 
 // at any time you can only hold at most one unit of stock, and you can make at most 2 transactions in total. 
@@ -14,15 +16,14 @@ public class BuyStock3 {
 		int sellOne = 0, sellTwo = 0;
 		for (int i = 0; i < array.length; i++) {
 			// if this is the first stock I buy, and if I buy on day i,
-			// do I save money than if I buy in any day between 0, ..., i - 1?
-			// if yes, then I buy on day i; if not, then I buy in some previous
+			// do I save money than if I buy on any day between 0, ..., i - 1?
+			// if yes, then I buy on day i; if not, then I buy on some previous
 			// day, whichever is the cheapest
 			buyOne = Math.max(buyOne, -array[i]);
 			// if this is the first stock I sell, and if I sell on day i,
-			// do I make more money than if I sell in any day between 0, ..., i
-			// - 1?
-			// if yes, then I sell on day i; if not, then I sell in some
-			// previous day, whichever gives me the most profit
+			// do I make more money than if I sell on any day between 0, ..., i - 1?
+			// if yes, then I sell on day i; if not, then I sell on some previous 
+			// day, whichever gives me the most profit
 			sellOne = Math.max(sellOne, buyOne + array[i]);
 			// now that I have bought and sold the first stock, I have sellOne
 			// money at hand, instead of 0

@@ -1,5 +1,7 @@
 package buyStock2;
 
+//LeetCode #122 (Best Time to Buy and Sell Stock II).
+
 // Given an array of positive integers representing a stock’s price on each day. 
 // On each day you can only make one operation: either buy or sell one unit of stock, 
 // you can make as many transactions you want, but at any time you can only hold at most one unit of stock. 
