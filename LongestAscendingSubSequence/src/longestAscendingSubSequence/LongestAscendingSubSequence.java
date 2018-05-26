@@ -13,7 +13,7 @@ public class LongestAscendingSubSequence {
 	// M[i]: the length of longest ascending subsequence, ending at array[i]
 	public int longest(int[] array) {
 		if (array == null || array.length == 0) {
-			return 0;
+			return 1;
 		}
 		int max = 1;
 		int[] result = new int[array.length];
