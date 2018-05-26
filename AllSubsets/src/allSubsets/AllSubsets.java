@@ -21,19 +21,19 @@ public class AllSubsets {
 			return result;
 		}
 		StringBuilder sb = new StringBuilder();
-		DFS(set, 0, sb, result);
+		DFS(set, sb, result, 0);
 		return result;
 	}
 
-	private void DFS(String set, int level, StringBuilder sb, List<String> result) {
+	private void DFS(String set, StringBuilder sb, List<String> result, int level) {
 		if (level == set.length()) {
 			result.add(sb.toString());
 			return;
 		}
 		sb.append(set.charAt(level));
-		DFS(set, level + 1, sb, result);
+		DFS(set, sb, result, level + 1);
 		sb.deleteCharAt(sb.length() - 1);
-		DFS(set, level + 1, sb, result);
+		DFS(set, sb, result, level + 1);
 	}
 
 	// Time complexity is O(2^n).
