@@ -20,18 +20,18 @@ public class AllPermutations {
 			return result;
 		}
 		char[] array = set.toCharArray();
-		DFS(array, 0, result);
+		DFS(array, result, 0);
 		return result;
 	}
 
-	private void DFS(char[] array, int level, List<String> result) {
+	private void DFS(char[] array, List<String> result, int level) {
 		if (level == array.length) {
 			result.add(new String(array));
 			return;
 		}
 		for (int i = level; i < array.length; i++) {
 			swap(array, i, level);
-			DFS(array, level + 1, result);
+			DFS(array, result, level + 1);
 			swap(array, i, level);
 		}
 	}
