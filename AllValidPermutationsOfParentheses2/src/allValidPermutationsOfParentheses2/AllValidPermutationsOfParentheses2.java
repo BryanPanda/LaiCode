@@ -17,11 +17,11 @@ public class AllValidPermutationsOfParentheses2 {
 		int[] remain = new int[] { l, l, m, m, n, n };
 		StringBuilder sb = new StringBuilder();
 		LinkedList<Character> stack = new LinkedList<>();
-		DFS(2 * (l + m + n), remain, sb, stack, result);
+		DFS(2 * (l + m + n), remain, stack, sb, result);
 		return result;
 	}
 
-	private void DFS(int len, int[] remain, StringBuilder sb, LinkedList<Character> stack, List<String> result) {
+	private void DFS(int len, int[] remain, LinkedList<Character> stack, StringBuilder sb, List<String> result) {
 		if (sb.length() == len) {
 			result.add(sb.toString());
 			return;
@@ -31,7 +31,7 @@ public class AllValidPermutationsOfParentheses2 {
 				sb.append(PS[2 * i]);
 				remain[2 * i]--;
 				stack.offerFirst(PS[2 * i]);
-				DFS(len, remain, sb, stack, result);
+				DFS(len, remain, stack, sb, result);
 				sb.deleteCharAt(sb.length() - 1);
 				remain[2 * i]++;
 				stack.pollFirst();
@@ -39,7 +39,7 @@ public class AllValidPermutationsOfParentheses2 {
 			if (!stack.isEmpty() && stack.peekFirst().equals(PS[2 * i])) { // right parentheses
 				sb.append(PS[2 * i + 1]);
 				stack.pollFirst();
-				DFS(len, remain, sb, stack, result);
+				DFS(len, remain, stack, sb, result);
 				sb.deleteCharAt(sb.length() - 1);
 				stack.offerFirst(PS[2 * i]);
 			}
