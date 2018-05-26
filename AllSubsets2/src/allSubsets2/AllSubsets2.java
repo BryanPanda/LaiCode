@@ -25,22 +25,22 @@ public class AllSubsets2 {
 		char[] array = set.toCharArray();
 		Arrays.sort(array);
 		StringBuilder sb = new StringBuilder();
-		DFS(array, sb, 0, result);
+		DFS(array, sb, result, 0);
 		return result;
 	}
 
-	private void DFS(char[] array, StringBuilder sb, int level, List<String> result) {
+	private void DFS(char[] array, StringBuilder sb, List<String> result, int level) {
 		if (level == array.length) {
 			result.add(sb.toString());
 			return;
 		}
 		sb.append(array[level]);
-		DFS(array, sb, level + 1, result);
+		DFS(array, sb, result, level + 1);
 		sb.deleteCharAt(sb.length() - 1);
 		while (level < array.length - 1 && array[level] == array[level + 1]) {
 			level++;
 		}
-		DFS(array, sb, level + 1, result);
+		DFS(array, sb, result, level + 1);
 	}
 
 	// Time complexity is O(2^n).
