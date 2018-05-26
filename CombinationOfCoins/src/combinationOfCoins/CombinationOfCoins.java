@@ -18,11 +18,11 @@ public class CombinationOfCoins {
 	public List<List<Integer>> combinations(int target, int[] coins) {
 		List<List<Integer>> result = new ArrayList<List<Integer>>();
 		List<Integer> list = new ArrayList<>();
-		DFS(list, 0, target, coins, result);
+		DFS(target, coins, list, result, 0);
 		return result;
 	}
 
-	private void DFS(List<Integer> list, int level, int target, int[] coins, List<List<Integer>> result) {
+	private void DFS(int target, int[] coins, List<Integer> list, List<List<Integer>> result, int level) {
 		if (level == coins.length) {
 			if (target == 0) {
 				// Notice: create a new List<Integer>, otherwise all lists in
@@ -33,7 +33,7 @@ public class CombinationOfCoins {
 		}
 		for (int i = 0; i <= target / coins[level]; i++) {
 			list.add(i);
-			DFS(list, level + 1, target - i * coins[level], coins, result);
+			DFS(target - i * coins[level], coins, list, result, level + 1);
 			list.remove(list.size() - 1);
 		}
 	}
