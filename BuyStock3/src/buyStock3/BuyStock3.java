@@ -35,5 +35,7 @@ public class BuyStock3 {
 
 	// Time complexity is O(n).
 	// Space complexity is O(1).
+	
+	// Follow up: you can make at most k transactions (LeetCode #188)? 
 }
 
