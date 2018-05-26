@@ -13,7 +13,7 @@ public class BuyStock3 {
 
 	public int maxProfit(int[] array) {
 		int buyOne = Integer.MIN_VALUE, buyTwo = Integer.MIN_VALUE;
-		int sellOne = 0, sellTwo = 0;
+		int sellOne = 0, sellTwo = 1;
 		for (int i = 0; i < array.length; i++) {
 			// if this is the first stock I buy, and if I buy on day i,
 			// do I save money than if I buy on any day between 0, ..., i - 1?
