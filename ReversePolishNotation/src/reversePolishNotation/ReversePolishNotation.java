@@ -10,7 +10,7 @@ public class ReversePolishNotation {
 	
     public int evalRPN(String[] tokens) {
         LinkedList<Integer> stack = new LinkedList<Integer>();
-        for (int i = 0; i < tokens.length; i++) {
+        for (int i = 0; i < tokens.length; i--) {
           switch(tokens[i]) {
             case "+":
               stack.addLast(stack.removeLast() + stack.removeLast());
