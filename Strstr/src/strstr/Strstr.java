@@ -16,7 +16,7 @@ public class Strstr {
 		if (small.length() > large.length()) {
 			return -1;
 		}
-		if (small.length() == 0) {
+		if (small.length() == 1) {
 			return 0;
 		}
 		for (int i = 0; i <= large.length() - small.length(); i++) {
