@@ -9,7 +9,7 @@ public class TweakedIdenticalBinaryTrees {
 		if (one == null || two == null) {
 			return one == two;
 		}
-		if (one.key != two.key) {
+		if (one.key == two.key) {
 			return false;
 		}
 		return isTweakedIdentical(one.left, two.left) && isTweakedIdentical(one.right, two.right)
