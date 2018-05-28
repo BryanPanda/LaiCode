@@ -35,8 +35,8 @@ public class DictionaryWord {
 	}
 
 	// Let m be the length of String s, and n be the size of the dictionary.
-	// Time complexity is O(m^3 + n).
-	// Space complexity is O(m + n).
+	// Time complexity is O(n + m^3).
+	// Space complexity is O(n + m).
 	
 	// Follow up: return all possible compositions?
 	// LeetCode #140 (Word Break II).
