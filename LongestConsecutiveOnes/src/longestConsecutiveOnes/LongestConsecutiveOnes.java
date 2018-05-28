@@ -23,6 +23,6 @@ public class LongestConsecutiveOnes {
 	// Time complexity is O(n).
 	// Space complexity is O(1).
 	
-	// Follow up: you are allowed to flip at most 1 zero
+	// Follow up: you are allowed to flip at most one 0.
 	// LeetCode #487 (Maximum Consecutive Ones II).
 }
