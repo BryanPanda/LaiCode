@@ -1,31 +1,33 @@
 package largestSubArraySum2;
 
-// Given an unsorted integer array, find the start and end indices of the sub-array
-// that has the greatest sum. 
-// Return the start and end indices.
+// Given an unsorted integer array, find the subarray that has the greatest sum. 
 
-// Assumption: The given array is not null and has length of at least 1.
+// Return the sum and the indices of the left and right boundaries of the subarray.
+// If there are multiple solutions, return the leftmost subarray.
+
+// Assumptions:
+// 1. The given array is not null and has length of at least 1.
 
 public class LargestSubArraySum2 {
 
 	public int[] largestSum(int[] array) {
 		int cur = array[0], max = array[0];
-		int curLeft = 0, curRight = 0, resultLeft = 0, resultRight = 0;
+		int tempStart = 0, start = 0, end = 0;
 		for (int i = 1; i < array.length; i++) {
-			if (cur < 0) {
-				curLeft = curRight = i;
-				cur = array[i];
-			} else {
-				curRight = i;
+			if (cur >= 0) {
 				cur += array[i];
 			}
-			if (max < cur) {
-				resultLeft = curLeft;
-				resultRight = curRight;
+			else {
+				cur = array[i];
+				tempStart = i;
+			}
+			if (cur > max) {
 				max = cur;
+				start = tempStart;
+				end = i;
 			}
 		}
-		return new int[] { resultLeft, resultRight };
+		return new int[] { max, start, end };
 	}
 
 	// Time Complexity is O(n).
