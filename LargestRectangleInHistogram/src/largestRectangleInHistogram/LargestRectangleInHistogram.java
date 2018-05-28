@@ -1,6 +1,8 @@
 package largestRectangleInHistogram;
 
-import java.util.*;
+import java.util.LinkedList;
+
+// LeetCode #84 (Largest Rectangle in Histogram).
 
 // Given a non-negative integer array representing the heights of a list of adjacent bars.
 // Suppose each bar has a width of 1. Find the largest rectangular area that can be formed
