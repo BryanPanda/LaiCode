@@ -1,5 +1,8 @@
 package randomThousandUsingRandomFive;
 
+// Given a random generator random5(), the return value of random5() is 0 - 4 
+// with equal probability. Use random5() to implement random1000().
+
 public class RandomThousandUsingRandomFive {
 
 	static class RandomFive {
@@ -21,4 +24,5 @@ public class RandomThousandUsingRandomFive {
 			}
 		}
 	}
+	
 }
