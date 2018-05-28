@@ -7,41 +7,10 @@ package largestSubMatrixSum;
 
 public class LargestSubMatrixSum {
 
-	// DP solution 1: pre-compute prefix sum, on each row
-	public int largest(int[][] matrix) {
-		if (matrix.length == 0 || matrix[0].length == 0) {
-			return 0;
-		}
-		int result = Integer.MIN_VALUE, m = matrix.length, n = matrix[0].length;
-		int[][] rowSum = new int[m][n];
-		for (int i = 0; i < m; i++) {
-			for (int j = 0; j < n; j++) {
-				rowSum[i][j] = (j == 0) ? matrix[i][j] : rowSum[i][j - 1] + matrix[i][j];
-			}
-		}
-		for (int up = 0; up < m; up++) {
-			for (int left = 0; left < n; left++) {
-				for (int down = up; down < m; down++) {
-					for (int right = left; right < n; right++) {
-						int cur = 0;
-						for (int i = up; i <= down; i++) {
-							cur += (rowSum[i][right] - rowSum[i][left] + matrix[i][left]);
-						}
-						result = Math.max(result, cur);
-					}
-				}
-			}
-		}
-		return result;
-	}
-
-	// Time complexity is O(m^2)*O(n^2)*O(m).
-	// Space complexity is O(m*n).
-
-	// DP Solution 2: pre-compute prefix sum, of each sub-matrix,
+	// DP 1: pre-compute prefix sum, of each sub-matrix
 	// M[i][j]: prefix sum of sub-matrix, with top left corner being
 	// matrix[0][0], and bottom right corner being matrix[i][j]
-	public int largest2(int[][] matrix) {
+	public int largest(int[][] matrix) {
 		if (matrix.length == 0 || matrix[0].length == 0) {
 			return 0;
 		}
@@ -51,9 +20,9 @@ public class LargestSubMatrixSum {
 			for (int j = 0; j < n; j++) {
 				if (i == 0) {
 					sum[i][j] = (j == 0) ? matrix[i][j] : sum[i][j - 1] + matrix[i][j];
-				} else if (j == 0) { // 1 <= i < m - 1
+				} else if (j == 0) { // 1 <= i <= m - 1
 					sum[i][j] = sum[i - 1][j] + matrix[i][j];
-				} else { // 1 <= i < m - 1, 1 <= j <= n - 1
+				} else { // 1 <= i <= m - 1, 1 <= j <= n - 1
 					sum[i][j] = sum[i - 1][j] + sum[i][j - 1] - sum[i - 1][j - 1] + matrix[i][j];
 				}
 			}
@@ -78,11 +47,11 @@ public class LargestSubMatrixSum {
 		return result;
 	}
 
-	// Time complexity is O(m^2)*O(n^2).
+	// Time complexity is O(m^2 * n^2).
 	// Space complexity is O(m*n).
 
-	// DP Solution 3
-	public int largest3(int[][] matrix) {
+	// DP 2
+	public int largest2(int[][] matrix) {
 		if (matrix.length == 0 || matrix[0].length == 0) {
 			return 0;
 		}
@@ -90,16 +59,17 @@ public class LargestSubMatrixSum {
 		for (int i = 0; i < m; i++) {
 			int[] cur = new int[n];
 			for (int j = i; j < m; j++) {
-				add(cur, matrix[j]);
+				add(matrix[j], cur);
 				result = Math.max(result, max(cur));
 			}
 		}
 		return result;
 	}
 
-	private void add(int[] cur, int[] add) {
-		for (int i = 0; i < cur.length; i++) {
-			cur[i] += add[i];
+	// add array to cur
+	private void add(int[] array, int[] cur) {
+		for (int i = 0; i < array.length; i++) {
+			cur[i] += array[i];
 		}
 	}
 
@@ -114,6 +84,6 @@ public class LargestSubMatrixSum {
 		return result;
 	}
 
-	// Time complexity is O(m^2) * O(n).
+	// Time complexity is O(m^2 * n).
 	// Space complexity is O(n).
 }
