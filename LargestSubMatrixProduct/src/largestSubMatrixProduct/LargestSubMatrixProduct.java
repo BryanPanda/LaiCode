@@ -1,5 +1,7 @@
 package largestSubMatrixProduct;
 
+import java.util.Arrays;
+
 // Given a matrix that contains doubles, find the sub-matrix 
 // with the largest product.
 // Return the product of the sub-matrix.
@@ -13,33 +15,25 @@ public class LargestSubMatrixProduct {
 			return 0;
 		}
 		double result = Double.MIN_VALUE;
-		int m = matrix.length;
+		int m = matrix.length, n = matrix[0].length;
 		for (int i = 0; i < m; i++) {
-			double[] cur = copy(matrix[i]);
-			result = Math.max(result, largestProduct(cur));
-			for (int j = i + 1; j < m; j++) {
-				multiply(cur, matrix[j]);
+			double[] cur = new double[n];
+			Arrays.fill(cur, 1.0);
+			for (int j = i; j < m; j++) {
+				multiply(matrix[j], cur);
 				result = Math.max(result, largestProduct(cur));
 			}
 		}
 		return result;
 	}
 
-	private double[] copy(double[] array) {
-		double[] result = new double[array.length];
+	private void multiply(double[] array, double[] cur) {
 		for (int i = 0; i < array.length; i++) {
-			result[i] = array[i];
-		}
-		return result;
-	}
-
-	private void multiply(double[] cur, double[] mult) {
-		for (int i = 0; i < cur.length; i++) {
-			cur[i] *= mult[i];
+			cur[i] *= array[i];
 		}
 	}
 
-	// largest sub-matrix product
+	// largest sub-array product
 	private double largestProduct(double[] array) {
 		double prevMax = array[0];
 		double curMax = array[0];
@@ -63,10 +57,4 @@ public class LargestSubMatrixProduct {
 
 	// Time complexity is O(m^2) * O(n).
 	// Space complexity is O(n).
-
-	public static void main(String[] args) {
-		LargestSubMatrixProduct largestSubMatrixProduct = new LargestSubMatrixProduct();
-		double[][] matrix = new double[][] { { 1, -0.2, -1 }, { 1, -1.5, 1 }, { 0, 0, 1 } };
-		System.out.println(largestSubMatrixProduct.largest(matrix));
-	}
 }
