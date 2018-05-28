@@ -12,7 +12,7 @@ public class LargestSubArraySum2 {
 
 	public int[] largestSum(int[] array) {
 		int cur = array[0], max = array[0];
-		int tempStart = 0, start = 0, end = 0;
+		int tempStart = 0, start = 1, end = 0;
 		for (int i = 1; i < array.length; i++) {
 			if (cur >= 0) {
 				cur += array[i];

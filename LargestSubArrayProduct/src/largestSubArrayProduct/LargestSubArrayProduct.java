@@ -1,5 +1,7 @@
 package largestSubArrayProduct;
 
+// LeetCode #152 (Maximum Product Subarray).
+
 // Given an unsorted array of doubles, find the sub-array that has the greatest
 // product. Return the product.
 
@@ -8,11 +10,7 @@ package largestSubArrayProduct;
 public class LargestSubArrayProduct {
 
 	public double largestProduct(double[] array) {
-		double prevMax = array[0];
-		double curMax = array[0];
-		double prevMin = array[0];
-		double curMin = array[0];
-		double result = array[0];
+		double prevMax = array[0], prevMin = array[0], curMax = array[0], curMin = array[0], max = array[0];
 		for (int i = 1; i < array.length; i++) {
 			if (array[i] > 0) {
 				curMax = Math.max(array[i], prevMax * array[i]);
@@ -23,17 +21,11 @@ public class LargestSubArrayProduct {
 			}
 			prevMax = curMax;
 			prevMin = curMin;
-			result = Math.max(result, curMax);
+			max = Math.max(max, curMax);
 		}
-		return result;
+		return max;
 	}
 
 	// Time complexity is O(n).
 	// Space complexity is O(1).
-
-	public static void main(String[] args) {
-		LargestSubArrayProduct largestSubArrayProduct = new LargestSubArrayProduct();
-		double[] array = new double[] { 1.1, -1.0, -3.0 };
-		System.out.println(largestSubArrayProduct.largestProduct(array));
-	}
 }
