@@ -34,8 +34,9 @@ public class DictionaryWord {
 		return array[input.length()];
 	}
 
-	// Time complexity is O(n^3), because substring method takes O(n) time.
-	// Space complexity is O(n).
+	// Let m be the length of String s, and n be the size of the dictionary.
+	// Time complexity is O(m^3 + n).
+	// Space complexity is O(m + n).
 	
 	// Follow up: return all possible compositions?
 	// LeetCode #140 (Word Break II).
