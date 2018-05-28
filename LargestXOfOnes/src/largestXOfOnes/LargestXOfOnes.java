@@ -1,11 +1,11 @@
 package largestXOfOnes;
 
-//Given a matrix that contains only 1s and 0s, find the largest
-//X shape which contains only 1s, with the same arm lengths and
-//the four arms joining at the central point.
-//Return the arm length of the largest X shape.
+// Given a matrix that contains only 1s and 0s, find the largest
+// X shape which contains only 1s, with the same arm lengths and
+// the four arms joining at the central point.
+// Return the arm length of the largest X shape.
 
-//Assumption: The given matrix is not null, has size of N * M, N >= 0 and M >= 0.
+// Assumption: The given matrix is not null, has size of N * M, N >= 0 and M >= 0.
 
 public class LargestXOfOnes {
 
@@ -26,10 +26,6 @@ public class LargestXOfOnes {
 			}
 		}
 		return max;
-	}
-
-	private int min(int a, int b, int c, int d) {
-		return Math.min(a, Math.min(b, Math.min(c, d)));
 	}
 
 	private int[][] topLeftBottomRight(int[][] matrix, int row, int col) {
@@ -80,7 +76,11 @@ public class LargestXOfOnes {
 		}
 		return bottomRightTopLeft;
 	}
+	
+	private int min(int a, int b, int c, int d) {
+		return Math.min(a, Math.min(b, Math.min(c, d)));
+	}
 
-	// Time complexity is O(n*m).
-	// Space complexity is O(n*m).
+	// Time complexity is O(m*m).
+	// Space complexity is O(m*m).
 }
