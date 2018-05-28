@@ -1,5 +1,7 @@
 package perfectShuffle;
 
+// LeetCode #384 (Shuffle an Array).
+
 // Given an array of integers (without any duplicates), shuffle the array such that 
 // all permutations are equally likely to be generated.
 
