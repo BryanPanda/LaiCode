@@ -1,5 +1,7 @@
 package longestConsecutiveOnes;
 
+// LeetCode #485 (Maximum Consecutive Ones).
+
 // Given an array containing only 0s and 1s, find the length of the longest subarray of consecutive 1s.
 
 // Assumption: The given array is not null
