@@ -42,4 +42,5 @@ public class ReservoirSampling2 {
 	public List<Integer> sample() {
 		return sample;
 	}
+	
 }
