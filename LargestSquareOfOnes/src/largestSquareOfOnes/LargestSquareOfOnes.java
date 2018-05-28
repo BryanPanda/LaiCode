@@ -10,7 +10,6 @@ public class LargestSquareOfOnes {
 	// M[i][j]: length of the largest square from position (0, 0) to (i, j),
 	// inclusive, of the matrix, including the (i, j) element of the matrix
 	public int largest(int[][] matrix) {
-		// corner case
 		if (matrix.length == 0) {
 			return 0;
 		}
