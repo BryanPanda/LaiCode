@@ -3,11 +3,11 @@ package editDistance;
 // Given two strings of alphanumeric characters, determine the minimum number of 
 // Replace, Delete, and Insert operations needed to transform one string into the other.
 
-// Assumption: Both strings are not null
+// Assumption: Both strings are not null.
 
 public class EditDistance {
 
-	// recursive solution
+	// recursive
 	public int editDistance(String one, String two) {
 		// base case
 		if (one.length() == 0) {
@@ -31,10 +31,10 @@ public class EditDistance {
 	}
 
 	// Time complexity is O(4^(m+n)).
-	// Space complexity is O(m+n).
+	// Space complexity is O(m + n).
 
-	// DP solution
-	// M[i][j]: minimum number of operations of transferring index 0 to i - 1,
+	// DP
+	// M[i][j]: minimum number of operations needed to transfer index 0 to i - 1,
 	// inclusive, of string one, to index 0 to j - 1, inclusive, of string two
 	public int editDistance2(String one, String two) {
 		if (one.length() == 0) {
@@ -60,5 +60,5 @@ public class EditDistance {
 	}
 
 	// Time complexity is O(m*n).
-	// Space complexity is O(m*n).
+	// Space complexity is O(m*n), but obviously can be optimized to O(1).
 }
