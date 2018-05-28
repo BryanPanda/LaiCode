@@ -23,4 +23,7 @@ public class NinetyFivePercentile {
 		}
 		return result;
 	}
+	
+	// Time complexity is O(n).
+	// Space complexity is O(maximum length of valid url).
 }
