@@ -36,4 +36,7 @@ public class DictionaryWord {
 
 	// Time complexity is O(n^3), because substring method takes O(n) time.
 	// Space complexity is O(n).
+	
+	// Follow up: return all possible compositions?
+	// LeetCode #140 (Word Break II).
 }
