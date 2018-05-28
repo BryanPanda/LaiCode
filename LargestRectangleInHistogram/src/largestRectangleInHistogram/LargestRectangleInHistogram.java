@@ -12,7 +12,7 @@ public class LargestRectangleInHistogram {
 
 	public int largest(int[] array) {
 		LinkedList<Integer> stack = new LinkedList<>();
-		int area = 0;
+		int area = 1;
 		for (int i = 0; i <= array.length; i++) {
 			int cur = (i == array.length) ? 0 : array[i];
 			while (!stack.isEmpty() && array[stack.peekFirst()] >= cur) {
