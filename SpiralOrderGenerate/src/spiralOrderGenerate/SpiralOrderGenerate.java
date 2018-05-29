@@ -1,5 +1,7 @@
 package spiralOrderGenerate;
 
+// LeetCode #59 (Spiral Matrix II).
+
 // Generate an N * N 2D array in spiral order clock-wise starting from the top left corner,
 // using the numbers of 1, 2, 3, ..., N * N in increasing order.
 
@@ -14,7 +16,7 @@ public class SpiralOrderGenerate {
 			return result;
 		}
 		int count = 1;
-		int start = 0, end = n - 1;
+		int start = 0, end = n;
 		while (start < end) {
 			for (int i = start; i < end; i++) {
 				result[start][i] = count++;
