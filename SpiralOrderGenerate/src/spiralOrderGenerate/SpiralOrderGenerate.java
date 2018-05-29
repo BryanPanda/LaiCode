@@ -1,13 +1,13 @@
 package spiralOrderGenerate;
 
-//Generate an N * N 2D array in spiral order clock-wise starting from the top left corner,
-//using the numbers of 1, 2, 3, ..., N * N in increasing order.
+// Generate an N * N 2D array in spiral order clock-wise starting from the top left corner,
+// using the numbers of 1, 2, 3, ..., N * N in increasing order.
 
-//Assumptions: N >= 0
+// Assumptions: N >= 0
 
 public class SpiralOrderGenerate {
 
-	// iterative solution
+	// iterative
 	public int[][] spiralGenerate(int n) {
 		int[][] result = new int[n][n];
 		if (n == 0) {
@@ -38,10 +38,10 @@ public class SpiralOrderGenerate {
 		return result;
 	}
 
-	// Time Complexity is O(n*n).
+	// Time Complexity is O(n^2).
 	// Space Complexity is O(1).
 
-	// recursive solution
+	// recursive
 	public int[][] spiralGenerate2(int n) {
 		int[][] result = new int[n][n];
 		if (n == 0) {
@@ -75,6 +75,6 @@ public class SpiralOrderGenerate {
 		helper(result, offset + 1, size - 2, count);
 	}
 
-	// Time Complexity is O(n*n).
+	// Time Complexity is O(n^2).
 	// Space Complexity is O(n), because of call-stack.
 }
