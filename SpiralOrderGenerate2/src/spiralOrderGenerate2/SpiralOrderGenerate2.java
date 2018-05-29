@@ -5,7 +5,7 @@ package spiralOrderGenerate2;
 
 public class SpiralOrderGenerate2 {
 
-	// iterative solution
+	// iterative
 	public int[][] spiralGenerate(int m, int n) {
 		int[][] result = new int[m][n];
 		if (m == 0 || n == 0) {
@@ -36,13 +36,11 @@ public class SpiralOrderGenerate2 {
 		if (left > right || up > down) {
 			return result;
 		}
-		// up to this point, (left >= right || up >= down)
-		// && (left <= right && up <= down)
-		if (left == right) {
+		if (left == right) { // one column left
 			for (int i = up; i <= down; i++) {
 				result[i][left] = count++;
 			}
-		} else {
+		} else { // one row left
 			for (int i = left; i <= right; i++) {
 				result[up][i] = count++;
 			}
