@@ -6,11 +6,11 @@ import java.util.List;
 // Traverse an N * N 2D array in spiral order clock-wise starting from the top left corner. 
 // Return the list of traversal sequence.
 
-// Assumption: The 2D array is not null and has size of N * N where N >= 0
+// Assumption: The 2D array is not null and has size of N * N where N >= 0.
 
 public class SpiralOrderTraverse {
 
-	// iterative solution
+	// iterative
 	public List<Integer> spiral(int[][] matrix) {
 		List<Integer> result = new ArrayList<>();
 		int start = 0, end = matrix.length - 1;
@@ -39,7 +39,7 @@ public class SpiralOrderTraverse {
 	// Time complexity is O(n^2).
 	// Space complexity is O(1).
 
-	// recursive solution
+	// recursive
 	public List<Integer> spiral2(int[][] matrix) {
 		List<Integer> result = new ArrayList<>();
 		if (matrix.length == 0) {
