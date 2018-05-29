@@ -3,6 +3,8 @@ package spiralOrderTraverse2;
 import java.util.ArrayList;
 import java.util.List;
 
+// LeetCode #54 (Spiral Matrix).
+
 // Traverse an M * N 2D array in spiral order clock-wise starting from the top left corner. 
 // Return the list of traversal sequence.
 
@@ -10,7 +12,7 @@ import java.util.List;
 
 public class SpiralOrderTraverse2 {
 
-	// iterative solution
+	// iterative
 	public List<Integer> spiral(int[][] matrix) {
 		List<Integer> result = new ArrayList<Integer>();
 		if (matrix.length == 0) {
@@ -57,7 +59,7 @@ public class SpiralOrderTraverse2 {
 	// Time complexity is O(m*n).
 	// Space complexity is O(1).
 
-	// recursive solution
+	// recursive
 	public List<Integer> spiral2(int[][] matrix) {
 		List<Integer> result = new ArrayList<>();
 		if (matrix.length == 0 || matrix[0].length == 0) {
