@@ -16,7 +16,7 @@ public class SpiralOrderGenerate {
 			return result;
 		}
 		int count = 1;
-		int start = 0, end = n;
+		int start = 0, end = n - 1;
 		while (start < end) {
 			for (int i = start; i < end; i++) {
 				result[start][i] = count++;
