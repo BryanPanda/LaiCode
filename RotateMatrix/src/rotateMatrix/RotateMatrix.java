@@ -2,7 +2,7 @@ package rotateMatrix;
 
 // Rotate an N * N matrix clockwise 90 degrees.
 
-// Assumption: The matrix is not null and N >= 0
+// Assumption: The matrix is not null and N >= 0.
 
 public class RotateMatrix {
 
