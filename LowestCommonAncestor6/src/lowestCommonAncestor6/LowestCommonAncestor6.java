@@ -19,7 +19,6 @@ public class LowestCommonAncestor6 {
 	}
 
 	private TreeNodeK helper(TreeNodeK root, Set<TreeNodeK> set) {
-		// base case
 		if (root == null || set.contains(root)) {
 			return root;
 		}
@@ -42,3 +41,4 @@ public class LowestCommonAncestor6 {
 	// Space complexity is O(n) because of call-stack, if the binary tree is
 	// highly unbalanced.
 }
+
