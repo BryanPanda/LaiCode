@@ -1,5 +1,7 @@
 package rainbowSort;
 
+// LeetCode #75 (Sort Color).
+
 // Given an array of balls, where the color of the balls can only be Red, Green or Blue, 
 // sort the balls such that all the Red balls are grouped on the left side, all the Green balls 
 // are grouped in the middle and all the Blue balls are grouped on the right side. 
@@ -37,6 +39,7 @@ public class RainbowSort {
 
 	// Time complexity is O(n).
 	// Space complexity is O(1).
+	
 	// Attention:
 	// 1. definition of three bounds, each of them exclusive/inclusive
 	// 2. j++ in swap(array, i++, j++)
