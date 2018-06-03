@@ -60,6 +60,7 @@ public class LargestAndSecondLargest {
 	}
 
 	// The number of comparison is O(n).
+	
 	// Time complexity is O(log(n)).
 	// Space complexity is O(n).
 }
