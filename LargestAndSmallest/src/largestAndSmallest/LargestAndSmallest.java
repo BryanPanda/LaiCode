@@ -35,7 +35,8 @@ public class LargestAndSmallest {
 		array[j] = temp;
 	}
 	
-	// The number of comparison is 1.5 * N
+	// The number of comparison is 1.5 * N.
+	
 	// Time complexity is O(n).
 	// Space complexity is O(1).
 }
