@@ -1,6 +1,5 @@
 package mergeKSortedArray;
 
-import java.util.Arrays;
 import java.util.Comparator;
 import java.util.PriorityQueue;
 
@@ -10,7 +9,7 @@ import java.util.PriorityQueue;
 
 public class MergeKSortedArray {
 
-	// solution 1: BFS2
+	// Solution 1: BFS + Priority Queue
 	static class Element {
 		int value;
 		int indexOfArray;
@@ -39,8 +38,8 @@ public class MergeKSortedArray {
 		});
 		int length = 0;
 		for (int i = 0; i < k; i++) {
-			length += arrayOfArrays[i].length;
 			if (arrayOfArrays[i].length > 0) {
+				length += arrayOfArrays[i].length;
 				minHeap.offer(new Element(arrayOfArrays[i][0], i, 0));
 			}
 		}
@@ -59,16 +58,10 @@ public class MergeKSortedArray {
 	// Time complexity is O(n*k*log(k)).
 	// Space complexity is O(k).
 
-	// solution 2: binary reduction
+	// Solution 2: binary reduction
 	// Time complexity is O(n*k*log(k)).
 	// Space complexity is O(k*n).
 
 	// When array sizes are big, solution 1 reads and writes each element once,
-	// solution 2 reads and writes reach element log(k) times.
-
-	public static void main(String[] args) {
-		MergeKSortedArray mergeKSortedArray = new MergeKSortedArray();
-		int[][] arrayOfArrays = new int[][] { { 1, 5, 7 }, { 4 }, { 2, 3, 5, 11 }, { 2, 4, 4, 6, 8 } };
-		System.out.println(Arrays.toString(mergeKSortedArray.merge(arrayOfArrays)));
-	}
+	// while solution 2 reads and writes reach element log(k) times.
 }
