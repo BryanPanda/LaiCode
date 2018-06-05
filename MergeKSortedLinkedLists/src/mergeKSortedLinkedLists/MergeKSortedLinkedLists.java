@@ -1,19 +1,19 @@
 package mergeKSortedLinkedLists;
 
-import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.PriorityQueue;
 
-// LeetCode #23
+// LeetCode #23 (Merge k Sorted Lists).
 
 // Merge K sorted lists into one big sorted list in ascending order.
 // Assumption: ListOfLists is not null, and none of the lists is null.
 
 public class MergeKSortedLinkedLists {
 
+	// Solution 1: BFS + Priority Queue
 	public ListNode merge(List<ListNode> listOfLists) {
-		if (listOfLists == null) {
+		if (listOfLists == null || listOfLists.size() == 0) {
 			return null;
 		}
 		int k = listOfLists.size();
@@ -31,8 +31,8 @@ public class MergeKSortedLinkedLists {
 				minHeap.offer(head);
 			}
 		}
-		ListNode result = new ListNode(0);
-		ListNode cur = result;
+		ListNode newHead = new ListNode(0);
+		ListNode cur = newHead;
 		while (!minHeap.isEmpty()) {
 			ListNode node = minHeap.poll();
 			cur.next = node;
@@ -41,16 +41,16 @@ public class MergeKSortedLinkedLists {
 				minHeap.offer(node.next);
 			}
 		}
-		return result.next;
+		return newHead.next;
 	}
 
 	// Time complexity is O(n*k*log(k)).
 	// Space complexity is O(k).
 
-	// solution 2: binary reduction
+	// Solution 2: Binary Reduction
 	// Time complexity is O(n*k*log(k)).
 	// Space complexity is O(k*n).
 
 	// When array sizes are big, solution 1 reads and writes each element once,
-	// solution 2 reads and writes reach element log(k) times.
+	// while solution 2 reads and writes reach element log(k) times.
 }
