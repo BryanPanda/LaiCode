@@ -58,7 +58,7 @@ public class MergeKSortedArray {
 	// Time complexity is O(n*k*log(k)).
 	// Space complexity is O(k).
 
-	// Solution 2: binary reduction
+	// Solution 2: Binary Reduction
 	// Time complexity is O(n*k*log(k)).
 	// Space complexity is O(k*n).
 
