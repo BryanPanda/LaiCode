@@ -10,11 +10,9 @@ package largestNumberSmallerInBinarySearchTree;
 public class LargestNumberSmallerInBinarySearchTree {
 
 	public int largestSmaller(TreeNode root, int target) {
-		// base case
 		if (root == null) {
 			return Integer.MIN_VALUE;
 		}
-		// root != null
 		if (root.key >= target) {
 			return largestSmaller(root.left, target);
 		} else {
@@ -42,17 +40,4 @@ public class LargestNumberSmallerInBinarySearchTree {
 
 	// Time complexity is O(n).
 	// Space complexity is O(1).
-
-	public static void main(String[] args) {
-		LargestNumberSmallerInBinarySearchTree largestNumberSmallerInBinarySearchTree = new LargestNumberSmallerInBinarySearchTree();
-		TreeNode root = new TreeNode(5);
-		root.left = new TreeNode(2);
-		root.right = new TreeNode(11);
-		root.right.left = new TreeNode(6);
-		root.right.right = new TreeNode(14);
-		System.out.println(largestNumberSmallerInBinarySearchTree.largestSmaller(root, 1));
-		System.out.println(largestNumberSmallerInBinarySearchTree.largestSmaller(root, 10));
-		System.out.println(largestNumberSmallerInBinarySearchTree.largestSmaller(root, 6));
-	}
-
 }
