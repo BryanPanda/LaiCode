@@ -1,5 +1,7 @@
 package closestNumberInBinarySearchTree;
 
+// LeetCode #270 (Closest Binary Search Tree Value).
+
 // In a binary search tree, find the node containing the closest number to the given target number.
 
 // Assumption:
@@ -8,13 +10,11 @@ package closestNumberInBinarySearchTree;
 
 public class ClosestNumberInBinarySearchTree {
 
-	// recursive solution
+	// recursive
 	public int closest(TreeNode root, int target) {
-		// base case
 		if (root.left == null && root.right == null || root.key == target) {
 			return root.key;
 		}
-		// root.key != target && (root.left != null || root.right != null)
 		if (root.key < target) {
 			if (root.right == null) {
 				return root.key;
@@ -39,7 +39,7 @@ public class ClosestNumberInBinarySearchTree {
 	// Time complexity is O(log(n)).
 	// Space complexity is O(log(n)).
 
-	// iterative solution
+	// iterative
 	public int closest2(TreeNode root, int target) {
 		if (root.key == target || (root.left == null && root.right == null)) {
 			return root.key;
@@ -64,12 +64,4 @@ public class ClosestNumberInBinarySearchTree {
 
 	// Time complexity is O(log(n)).
 	// Space complexity is O(1).
-
-	public static void main(String[] args) {
-		ClosestNumberInBinarySearchTree closestNumberInBinarySearchTree = new ClosestNumberInBinarySearchTree();
-		TreeNode root = new TreeNode(2);
-		root.left = new TreeNode(1);
-		System.out.println(closestNumberInBinarySearchTree.closest(root, 3));
-	}
-
 }
