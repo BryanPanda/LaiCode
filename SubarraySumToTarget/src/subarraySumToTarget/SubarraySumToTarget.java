@@ -10,31 +10,24 @@ import java.util.Set;
 public class SubarraySumToTarget {
 
 	public boolean sumToTarget(int[] array, int target) {
-		if (array == null || array.length == 0) {
-			return false;
-		}
+		int prefixSum = 0;
 		Set<Integer> prefixSums = new HashSet<>();
 		prefixSums.add(0);
-		return DFS(array, target, 0, 0, prefixSums);
-	}
-
-	private boolean DFS(int[] array, int target, int index, int prefixSum, Set<Integer> prefixSums) {
-		prefixSum += array[index];
-		if (prefixSums.contains(prefixSum - target)) {
-			return true;
-		}
-		boolean needRemove = prefixSums.add(prefixSum);
-		if (index < array.length - 1 && DFS(array, target, index + 1, prefixSum, prefixSums)) {
-			return true;
-		}
-		if (needRemove) {
-			prefixSums.remove(prefixSum);
+		for (int i = 0; i < array.length; i++) {
+			prefixSum += array[i];
+			if (prefixSums.contains(prefixSum - target)) {
+				return true;
+			}
+			prefixSums.add(prefixSum);
 		}
 		return false;
 	}
 	
 	// Time complexity is O(n).
 	// Space complexity is O(n).
+	
+	// Note: It might be tempting to use DFS, as in LeetCode #437 (Path Sum III).
+	// However, that turns out to be a tail recursion, and thus can be turned into an iterative solution.
 	
 	// Follow up: return the total number of sub-arrays that sum to target (LeetCode #560 Subarray Sum Equals K).
 }
