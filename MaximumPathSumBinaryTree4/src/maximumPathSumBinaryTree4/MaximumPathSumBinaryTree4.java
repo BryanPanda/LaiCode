@@ -11,7 +11,6 @@ public class MaximumPathSumBinaryTree4 {
 		if (root.left == null && root.right == null) {
 			return root.key;
 		}
-		// root.left != null || root.right != null
 		int left = (root.left == null) ? 0 : maxPathSum(root.left);
 		int right = (root.right == null) ? 0 : maxPathSum(root.right);
 		return root.key + Math.max(left, right);
