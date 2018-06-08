@@ -1,5 +1,11 @@
 package binaryTreeDiameter;
 
+// LeetCode #543 (Diameter of Binary Tree).
+
+// Note the different definition of diameter between LaiCode and LeetCode.
+// Basically, when the path is required to be from leaf to leaf, max should only be updated 
+// when root has both left child and right child. 
+
 // Given a binary tree in which each node contains an integer number. 
 // The diameter is defined as the longest distance from one leaf node to another leaf node. 
 // The distance is the number of nodes on the path.
@@ -7,35 +13,25 @@ package binaryTreeDiameter;
 
 public class BinaryTreeDiameter {
 
+	private int max = 0;
+
 	public int diameter(TreeNode root) {
-		int[] max = new int[] { 0 };
-		helper(root, max);
-		return max[0];
+		helper(root);
+		return max;
 	}
 
-	private int helper(TreeNode root, int[] max) {
+	private int helper(TreeNode root) {
 		if (root == null) {
 			return 0;
 		}
-		int left = helper(root.left, max);
-		int right = helper(root.right, max);
-		// if root.left == null || root.right == null
-		// don't update max[0]
-		if (root.left != null && root.right != null) {
-			max[0] = Math.max(max[0], left + right + 1);
+		int left = helper(root.left);
+		int right = helper(root.right);
+		if (root.left != null && root.right != null) { // update max only if root has both left child and right child
+			max = Math.max(max, left + right + 1);
 		}
 		return Math.max(left, right) + 1;
 	}
 
 	// Time complexity is O(n).
-	// Space complexity is O(n), because of call-stack, if the binary tree is
-	// highly unbalanced.
-
-	public static void main(String[] args) {
-		BinaryTreeDiameter binaryTreeDiameter = new BinaryTreeDiameter();
-		TreeNode root = new TreeNode(1);
-		root.right = new TreeNode(2);
-		root.right.left = new TreeNode(3);
-		System.out.println(binaryTreeDiameter.diameter(root));
-	}
+	// Space complexity is O(n), because of call-stack, if the binary tree is highly unbalanced.
 }
