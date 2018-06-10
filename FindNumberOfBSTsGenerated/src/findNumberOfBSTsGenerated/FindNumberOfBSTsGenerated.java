@@ -1,23 +1,23 @@
 package findNumberOfBSTsGenerated;
 
-// Find the number of different Binary Search Trees generated from 1-n.
+// LeetCode #96 (Unique Binary Search Trees).
+
+// Find the number of different Binary Search Trees generated from 1, ..., n.
 
 public class FindNumberOfBSTsGenerated {
 
+	// array[i]: number of different BSTs generated from 1, ..., i
+	// array[i] = array[j - 1] * array[i - j], for j = 1, ..., i
 	public int numOfTrees(int n) {
 		if (n == 0) {
 			return 1;
 		}
 		int[] array = new int[n + 1];
+        array[0] = 1;
 		array[1] = 1;
-		for (int i = 2; i < n + 1; i++) {
-			array[i] = array[i - 1] * 2;
-			int left = 1, right = i - 2;
-			while (left < right) {
-				array[i] += array[left++] * array[right--] * 2;
-			}
-			if (left == right) {
-				array[i] += array[left] * array[right];
+		for (int i = 2; i <= n; i++) {
+			for (int j = 1; j <= i; j++) {
+				array[i] += array[j - 1] * array[i - j];
 			}
 		}
 		return array[n];
@@ -47,9 +47,4 @@ public class FindNumberOfBSTsGenerated {
 
 	// Time complexity is O(n).
 	// Space complexity is O(1).
-
-	public static void main(String[] args) {
-		FindNumberOfBSTsGenerated findNumberOfBSTsGenerated = new FindNumberOfBSTsGenerated();
-		System.out.println(findNumberOfBSTsGenerated.numOfTrees2(5));
-	}
 }
