@@ -38,4 +38,43 @@ public class FindAllBinarySearchTrees {
 	// Space complexity is O(n).
 	
 	// DP
+	// M[i]: all possible BSTs from 1, ..., i.
+	public List<TreeNode> generateBSTs2(int n) {
+		List<TreeNode>[] M = new List[n + 1];
+		M[0] = new ArrayList<TreeNode>();
+		M[0].add(null);
+		if (n == 0) {
+			return M[0];
+		}
+		for (int i = 1; i <= n; i++) {
+			M[i] = new ArrayList<TreeNode>();
+			for (int j = 1; j <= i; j++) { // let j be root
+				List<TreeNode> left = M[j - 1];
+				List<TreeNode> right = M[i - j];
+				for (TreeNode l : left) {
+					for (TreeNode r : right) {
+						TreeNode root = new TreeNode(j);
+						root.left = l;
+						root.right = increment(r, j);
+						M[i].add(root);
+					}
+				}
+			}
+		}
+		return M[n];
+	}
+	
+	// increment the subtree by offset
+	private TreeNode increment(TreeNode root, int offset) {
+		if (root == null) {
+			return null;
+		}
+		TreeNode newRoot = new TreeNode(root.key + offset); // base case
+		newRoot.left = increment(root.left, offset);
+		newRoot.right = increment(root.right, offset);
+		return newRoot;
+	}
+	
+	// Time complexity is ...
+	// Space complexity is O(catalan(n)).
 }
