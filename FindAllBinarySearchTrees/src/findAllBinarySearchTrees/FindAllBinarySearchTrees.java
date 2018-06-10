@@ -3,12 +3,14 @@ package findAllBinarySearchTrees;
 import java.util.ArrayList;
 import java.util.List;
 
-// Given a number n, generate all possible BST from 1, ..., n.
+// LeetCode #95 (Unique Binary Search Trees II).
+
+// Given a number n, generate all possible BSTs from 1, ..., n.
 
 public class FindAllBinarySearchTrees {
 
 	public List<TreeNode> generateBSTs(int n) {
-		return generateBSTs(1, n);
+		return generateBSTs(0, n);
 	}
 
 	private List<TreeNode> generateBSTs(int start, int end) {
@@ -32,8 +34,8 @@ public class FindAllBinarySearchTrees {
 		return result;
 	}
 	
-	// Time complexity is ...
+	// Time complexity is O(catalan(n)). See https://en.wikipedia.org/wiki/Catalan_number.
 	// Space complexity is O(n).
 	
-	// Note: Obviously there are repetitive computations, so DP is a better approach.
+	// DP
 }
