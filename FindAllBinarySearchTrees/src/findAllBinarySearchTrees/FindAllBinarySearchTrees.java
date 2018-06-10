@@ -10,7 +10,7 @@ import java.util.List;
 public class FindAllBinarySearchTrees {
 
 	public List<TreeNode> generateBSTs(int n) {
-		return generateBSTs(0, n);
+		return generateBSTs(1, n);
 	}
 
 	private List<TreeNode> generateBSTs(int start, int end) {
