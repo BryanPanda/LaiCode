@@ -70,6 +70,8 @@ public class UnionFind {
 		}
 	}
 	
+	// Time complexity is O((m+n) * log(n)), on any m union-find operations
+	// on a set of n objects.
 }
 
 
