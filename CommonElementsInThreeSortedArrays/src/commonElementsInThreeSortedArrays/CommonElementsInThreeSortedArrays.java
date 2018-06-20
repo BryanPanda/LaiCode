@@ -7,7 +7,7 @@ import java.util.List;
 
 public class CommonElementsInThreeSortedArrays {
 
-	public List<Integer> common2(int[] a, int[] b, int[] c) {
+	public List<Integer> common(int[] a, int[] b, int[] c) {
 		List<Integer> list = new ArrayList<>();
 		int i = 0, j = 0, k = 0;
 		while (i < a.length && j < b.length && k < c.length) {
