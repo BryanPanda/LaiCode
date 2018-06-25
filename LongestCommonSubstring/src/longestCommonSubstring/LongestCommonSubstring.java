@@ -2,30 +2,23 @@ package longestCommonSubstring;
 
 // Find the longest common substring of two given strings.
 
-// Assumption: The two given strings are not null
+// Assumption: The two given strings are not null.
 
 public class LongestCommonSubstring {
 
-	// M[i][j] represents length of the longest common substring of first i
-	// letters of the first string, including the i-th letter, and first j
-	// letters of the second string, including the j-th letter.
+	// M[i][j] represents length of the longest common substring of the first i
+	// letters of s and the first j letters of t, both inclusive.
 	public String longestCommon(String s, String t) {
-		char[] sa = s.toCharArray();
-		char[] ta = t.toCharArray();
-		int start = 0;
-		int length = 0;
-		int[][] common = new int[sa.length][ta.length];
-		for (int i = 0; i < sa.length; i++) {
-			for (int j = 0; j < ta.length; j++) {
-				if (sa[i] == ta[j]) {
-					if (i == 0 || j == 0) {
-						common[i][j] = 1;
-					} else {
-						common[i][j] = common[i - 1][j - 1] + 1;
-					}
+		int start = 0, length = 0;
+		int m = s.length(), n = t.length();
+		int[][] M = new int[m][n];
+		for (int i = 0; i < m; i++) {
+			for (int j = 0; j < n; j++) {
+				if (s.charAt(i) == t.charAt(j)) {
+					M[i][j] = (i == 0 || j == 0) ? 1 : M[i - 1][j - 1] + 1;
 				}
-				if (common[i][j] > length) {
-					length = common[i][j];
+				if (M[i][j] > length) {
+					length = M[i][j];
 					start = i - length + 1;
 				}
 			}
@@ -33,12 +26,6 @@ public class LongestCommonSubstring {
 		return s.substring(start, start + length);
 	}
 
-	// Time complexity is O(m * n).
-	// Space complexity is O(m * n).
-
-	public static void main(String[] args) {
-		LongestCommonSubstring longestCommonSubstring = new LongestCommonSubstring();
-		String s = "sweden", t = "student";
-		System.out.println(longestCommonSubstring.longestCommon(s, t));
-	}
+	// Time complexity is O(m*n).
+	// Space complexity is O(m*n).
 }
