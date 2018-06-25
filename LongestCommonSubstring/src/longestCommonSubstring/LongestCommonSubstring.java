@@ -6,8 +6,8 @@ package longestCommonSubstring;
 
 public class LongestCommonSubstring {
 
-	// M[i][j] represents length of the longest common substring of the first i
-	// letters of s and the first j letters of t, both inclusive.
+	// M[i][j] represents length of the longest common substring 
+	// of s in [0, i] and t in [0, j].
 	public String longestCommon(String s, String t) {
 		int start = 0, length = 0;
 		int m = s.length(), n = t.length();
