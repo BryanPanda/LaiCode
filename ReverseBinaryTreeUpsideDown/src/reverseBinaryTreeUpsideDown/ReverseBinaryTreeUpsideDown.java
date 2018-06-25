@@ -28,7 +28,7 @@ public class ReverseBinaryTreeUpsideDown {
 	public TreeNode reverse2(TreeNode root) {
 		TreeNode cur = root;
 		TreeNode left = null, prev = null, temp = null, right = null;
-		while (cur == null) {
+		while (cur != null) {
 			left = cur.left;
 			right = cur.right;
 			cur.left = prev;
