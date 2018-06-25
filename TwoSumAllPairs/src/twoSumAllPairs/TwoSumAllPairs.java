@@ -1,12 +1,13 @@
 package twoSumAllPairs;
 
+import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Arrays;
 
 // Find all pairs of elements in a given array that sum to the given target number. 
+
 // Return all the pairs of indices.
 
 public class TwoSumAllPairs {
@@ -17,7 +18,7 @@ public class TwoSumAllPairs {
 		for (int i = 0; i < array.length; i++) {
 			if (map.containsKey(target - array[i])) {
 				for (int j : map.get(target - array[i])) {
-					result.add(Arrays.asList(i, j));
+					result.add(Arrays.asList(j, i));
 				}
 			}
 			if (!map.containsKey(array[i])) {
@@ -30,5 +31,4 @@ public class TwoSumAllPairs {
 
 	// Time complexity is O(n^2).
 	// Space complexity is O(n).
-	
 }
