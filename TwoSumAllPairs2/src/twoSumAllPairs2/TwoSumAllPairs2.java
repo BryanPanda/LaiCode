@@ -6,24 +6,20 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-// Find all pairs of elements in a given array that sum to the given target number. 
+// Find all pairs of elements in a given array that sum to the given target number.
+
 // Return all the distinct pairs of values.
 
 public class TwoSumAllPairs2 {
 
-	// Solution 1
 	public List<List<Integer>> allPairs(int[] array, int target) {
 		Arrays.sort(array);
 		List<List<Integer>> result = new ArrayList<List<Integer>>();
 		int left = 0, right = array.length - 1;
 		while (left < right) {
-			if (left > 0 && array[left] == array[left - 1]) {
-				left++;
-				continue;
-			}
-			if (array[left] + array[right] == target) {
+			if (array[left] + array[right] == target && (left == 0 || array[left] != array[left - 1])) {
 				result.add(Arrays.asList(array[left++], array[right--]));
-			} else if (array[left] + array[right] < target) {
+			} else if (array[left] + array[right] <= target) {
 				left++;
 			} else {
 				right--;
@@ -32,9 +28,8 @@ public class TwoSumAllPairs2 {
 		return result;
 	}
 
-	// Time complexity is O(n^2) in the worst case, because Arrays.sort() uses
-	// Quick Sort for primitive types.
-	// Space complexity is O(n) in the worst case, because of call-stack.
+	// Time complexity is O(n * log(n)) because of quick sort (for primitive types).
+	// Space complexity is O(log(n)).
 
 	// Solution 2
 	public List<List<Integer>> allPairs2(int[] array, int target) {
@@ -47,11 +42,8 @@ public class TwoSumAllPairs2 {
 			} else if (map.containsKey(target - num) && count == null) {
 				result.add(Arrays.asList(num, target - num));
 			}
-			if (count == null) {
-				map.put(num, 1);
-			} else {
-				map.put(num, count + 1);
-			}
+			count = count == null ? 1 : count + 1;
+			map.put(num, count);
 		}
 		return result;
 	}
