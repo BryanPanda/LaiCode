@@ -1,6 +1,6 @@
 package reverseBinaryTreeUpsideDown;
 
-// LeetCode #156 (Reverse Binary Tree Upside Down).
+// LeetCode #156 (Binary Tree Upside Down).
 
 // Given a binary tree where all the right nodes are leaf nodes, 
 // flip it upside down and turn it into a tree with left leaf nodes
