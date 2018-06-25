@@ -27,7 +27,7 @@ public class TwoSum {
 	}
 
 	// Time complexity is O(n * log(n)) because of quick sort (for primitive types).
-	// Space complexity is O(log(n)) because of quick sort (for primitive types).
+	// Space complexity is O(log(n)).
 
 	public boolean existSum2(int[] array, int target) {
 		Set<Integer> set = new HashSet<>();
