@@ -98,4 +98,6 @@ public class FourSum {
 
 	// Time complexity is O(n^2).
 	// Space complexity is O(n^2).
+
+	// Follow up: return all unique quadruplets (LeetCode #18)?
 }
