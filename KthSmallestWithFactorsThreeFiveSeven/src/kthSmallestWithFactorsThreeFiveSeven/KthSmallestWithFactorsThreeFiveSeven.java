@@ -43,7 +43,7 @@ public class KthSmallestWithFactorsThreeFiveSeven {
 	// Time complexity is O(k * log(k)).
 	// Space complexity is O(k).
 
-	// Solution 2: linear in time, with 3 deques
+	// Solution 2: BFS (no need to use heap nor hash set)
 	public long kth2(int k) {
 		long result = 3 * 5 * 7L;
 		LinkedList<Long> three = new LinkedList<>();
