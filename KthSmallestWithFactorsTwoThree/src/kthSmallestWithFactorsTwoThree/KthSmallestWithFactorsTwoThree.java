@@ -55,5 +55,4 @@ public class KthSmallestWithFactorsTwoThree {
 
 	// Time complexity is O(k).
 	// Space complexity is O(k).
-
 }
