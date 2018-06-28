@@ -61,6 +61,6 @@ public class LargestProductOfLength {
 	// Space complexity is O(n).
 
 	// Take-away: When there is only a limited number of possible chars in each
-	// word, bit mask can save time on checking whether two words share any common
-	// chars.
+	// word, bit mask can save time on checking whether two words have the same
+	// chars in common.
 }
