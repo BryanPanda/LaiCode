@@ -19,7 +19,8 @@ import java.util.Queue;
 
 // Assumptions:
 // 1. There is at least one equipment in the gym
-// 2. The given gym is represented by a char matrix of size M * N, where M >= 1 and N >= 1, it is guaranteed not to be null
+// 2. The given gym is represented by a char matrix of size M * N, where M >= 1 and 
+//    N >= 1, it is guaranteed not to be null
 
 public class PlaceToPutChair2 {
 
@@ -36,36 +37,36 @@ public class PlaceToPutChair2 {
 	}
 
 	public List<Integer> putChair(char[][] gym) {
-		int M = gym.length;
-		int N = gym[0].length;
-		int[][] cost = new int[M][N];
-		for (int i = 0; i < M; i++) {
-			for (int j = 0; j < N; j++) {
+		int m = gym.length, n = gym[0].length;
+		// sum up the path cost from all equipments to each particular cell
+		int[][] cost = new int[m][n];
+		for (int i = 0; i < m; i++) {
+			for (int j = 0; j < n; j++) {
 				if (gym[i][j] == EQUIPMENT) {
 					addCost(cost, gym, i, j);
 				}
 			}
 		}
 		List<Integer> result = null;
-		for (int i = 0; i < M; i++) {
-			for (int j = 0; j < N; j++) {
-				if (result == null) {
+		for (int i = 0; i < m; i++) {
+			for (int j = 0; j < n; j++) {
+				if (result == null || cost[i][j] < cost[result.get(0)][result.get(1)]) {
 					result = Arrays.asList(i, j);
-				} else if (cost[i][j] < cost[result.get(0)][result.get(1)]) {
-					result.set(0, i);
-					result.set(1, j);
 				}
 			}
 		}
 		return result;
 	}
 
-	private void addCost(int[][] cost, char[][] gym, int i, int j) {
+	// BFS (with queue)
+	// sum up the path cost from the equipment at (row, col) to each particular cell
+	private void addCost(int[][] cost, char[][] gym, int row, int col) {
+		int m = gym.length, n = gym[0].length;
 		int pathCost = 1;
-		boolean[][] visited = new boolean[gym.length][gym[0].length];
+		boolean[][] visited = new boolean[m][n];
 		Queue<Pair> queue = new LinkedList<>();
-		visited[i][j] = true;
-		queue.offer(new Pair(i, j));
+		visited[row][col] = true;
+		queue.offer(new Pair(row, col));
 		while (!queue.isEmpty()) {
 			int size = queue.size();
 			for (int k = 0; k < size; k++) {
@@ -84,15 +85,13 @@ public class PlaceToPutChair2 {
 	}
 
 	private List<Pair> getNeighbors(Pair cur, char[][] gym) {
-		int x = cur.x;
-		int y = cur.y;
-		int M = gym.length;
-		int N = gym[0].length;
+		int m = gym.length, n = gym[0].length;
+		int x = cur.x, y = cur.y;
 		List<Pair> neighbors = new ArrayList<>();
-		if (x + 1 < M) {
+		if (x + 1 < m) {
 			neighbors.add(new Pair(x + 1, y));
 		}
-		if (y + 1 < N) {
+		if (y + 1 < n) {
 			neighbors.add(new Pair(x, y + 1));
 		}
 		if (x - 1 >= 0) {
@@ -106,11 +105,4 @@ public class PlaceToPutChair2 {
 
 	// Time complexity is O(k * n^2).
 	// Space complexity is O(n^2).
-
-	public static void main(String[] args) {
-		PlaceToPutChair2 placeToPutChair2 = new PlaceToPutChair2();
-		char[][] gym = new char[][] { { ' ', 'E' }, { ' ', ' ' }, { ' ', ' ' } };
-		System.out.println(placeToPutChair2.putChair(gym));
-	}
-
 }
