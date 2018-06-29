@@ -1,6 +1,6 @@
 package maxWaterTrapped;
 
-// LeetCode #42
+// LeetCode #42 (Trapping Rain Water).
 
 // Given a non-negative integer array representing the heights of a list of adjacent bars. 
 // Suppose each bar has a width of 1. Find the largest amount of water that can be trapped in the histogram.
@@ -9,7 +9,7 @@ package maxWaterTrapped;
 
 public class MaxWaterTrapped {
 
-	// Solution 1
+	// Brute force
 	public int maxTrapped(int[] array) {
 		int result = 0;
 		for (int i = 0; i < array.length; i++) {
@@ -20,7 +20,7 @@ public class MaxWaterTrapped {
 			for (int k = i + 1; k < array.length; k++) {
 				maxRight = Math.max(maxRight, array[k]);
 			}
-			result += (Math.min(maxLeft, maxRight) - array[i] < 0) ? 0 : Math.min(maxLeft, maxRight) - array[i];
+			result += Math.max(Math.min(maxLeft, maxRight) - array[i], 0);
 		}
 		return result;
 	}
@@ -28,9 +28,9 @@ public class MaxWaterTrapped {
 	// Time complexity is O(n^2).
 	// Space complexity is O(1).
 
-	// Solution 2
-	// M1[i]: largest value from index 0 to i, inclusive
-	// M2[i]: largest value from index n-1 to i, inclusive
+	// DP
+	// M1[i]: largest value in [0, i]
+	// M2[i]: largest value in [i, n - 1]
 	public int maxTrapped2(int[] array) {
 		int result = 0;
 		int[] left = new int[array.length];
@@ -42,7 +42,7 @@ public class MaxWaterTrapped {
 			right[j] = (j == array.length - 1 || array[j] > right[j + 1]) ? array[j] : right[j + 1];
 		}
 		for (int i = 0; i < array.length; i++) {
-			result += (Math.min(left[i], right[i]) - array[i] < 0) ? 0 : Math.min(left[i], right[i]) - array[i];
+			result += Math.max(Math.min(left[i], right[i]) - array[i], 0);
 		}
 		return result;
 	}
@@ -50,16 +50,14 @@ public class MaxWaterTrapped {
 	// Time Complexity is O(n).
 	// Space complexity is O(n)
 
-	// Solution 3
+	// Two pointers
 	public int maxTrapped3(int[] array) {
 		if (array.length == 0) {
 			return 0;
 		}
-		int left = 0;
-		int right = array.length - 1;
 		int result = 0;
-		int leftMax = array[left];
-		int rightMax = array[right];
+		int left = 0, right = array.length - 1;
+		int leftMax = array[left], rightMax = array[right];
 		while (left < right) {
 			if (array[left] <= array[right]) {
 				result += Math.max(0, leftMax - array[left]);
