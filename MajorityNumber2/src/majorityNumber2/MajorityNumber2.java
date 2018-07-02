@@ -3,18 +3,22 @@ package majorityNumber2;
 import java.util.ArrayList;
 import java.util.List;
 
-// Given an integer array of length L, find all numbers that occur more than 1/3 * L times if any exist.
+// LeetCode #229 (Majority Element II).
 
-// Assumption: The given array is not null
+// Given an integer array of length L, find all numbers that occur more than 1/3 * L 
+// times if any exists.
+
+// Assumption: The given array is not null.
 
 public class MajorityNumber2 {
 
-	// Solution 1: sort the array
-	// O(n * log(n)) time, O(1) space.
+	// Solution 1: Sort the array, then linear scan.
+	// O(n * log(n)) time, O(n) space, because of merge sort (for primitive types).
 
-	// Solution 2: hash map
+	// Solution 2: Hash map
 	// O(n) time, O(n) space.
 
+	// Solution 3: Boyer-Moore Majority Vote Algorithm
 	public List<Integer> majority(int[] array) {
 		List<Integer> result = new ArrayList<>();
 		if (array == null || array.length == 0) {
