@@ -1,5 +1,7 @@
 package majorityNumber;
 
+// LeetCode #169 (Majority Element).
+
 // Given an integer array of length L, find the number that occurs more than 0.5 * L times.
 
 // Assumptions:
@@ -8,10 +10,10 @@ package majorityNumber;
 
 public class MajorityNumber {
 
-	// Solution 1: sort the array, and return the middle element
+	// Solution 1: Sort the array, then return the middle element.
 	// O(n * log(n)) time, O(1) space.
 
-	// Solution 2: hash map
+	// Solution 2: Hash map
 	// O(n) time, O(n) space.
 
 	// Solution 3
@@ -33,5 +35,4 @@ public class MajorityNumber {
 
 	// Time complexity is O(n).
 	// Space complexity is O(1).
-
 }
