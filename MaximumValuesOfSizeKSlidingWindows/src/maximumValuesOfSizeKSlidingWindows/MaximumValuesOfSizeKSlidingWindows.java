@@ -38,4 +38,7 @@ public class MaximumValuesOfSizeKSlidingWindows {
 
 	// Time complexity is O(n).
 	// Space complexity is O(k).
+
+	// Note: Using priority queue, time complexity is O(n*k), because remove(...)
+	// take O(k) time.
 }
