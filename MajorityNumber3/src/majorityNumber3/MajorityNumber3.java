@@ -20,6 +20,7 @@ public class MajorityNumber3 {
 	// Solution 2: Hash map.
 	// O(n) time, O(n) space.
 
+	// Solution 3: Boyer-Moore Majority Vote Algorithm
 	public List<Integer> majority(int[] array, int k) {
 		List<Integer> result = new ArrayList<>();
 		Map<Integer, Integer> map = new HashMap<>();
