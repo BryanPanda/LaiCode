@@ -1,23 +1,22 @@
 package interleaveStrings;
 
+// LeetCode #97 (Interleaving String).
+
 // Given three strings A, B and C. Determine if C can be created by merging A and B
 // in a way that maintains the relative order of the characters in A and B.
 
 public class InterleaveStrings {
 
-	// M[i][j] represents whether letters of string a, indexed from 0 to i - 1,
-	// inclusively, and letters of string b, indexed from 0 to j - 1,
-	// inclusively, can merge to letter of string c, indexed from 0 to i + j - 1
+	// M[i][j] represents whether letters of string a in [0, i - 1] and letters of
+	// string b in [0, j - 1] can merge to letter of string c in [0, i + j - 1].
 	public boolean canMerge(String a, String b, String c) {
-		int aLength = a.length();
-		int bLength = b.length();
-		int cLength = c.length();
-		if (aLength + bLength != cLength) {
+		int m = a.length(), n = b.length();
+		if (m + n != c.length()) {
 			return false;
 		}
-		boolean[][] matrix = new boolean[aLength + 1][bLength + 1];
-		for (int i = 0; i <= aLength; i++) {
-			for (int j = 0; j <= bLength; j++) {
+		boolean[][] matrix = new boolean[m + 1][n + 1];
+		for (int i = 0; i <= m; i++) {
+			for (int j = 0; j <= n; j++) {
 				if (i == 0 && j == 0) {
 					matrix[i][j] = true;
 				}
@@ -29,7 +28,7 @@ public class InterleaveStrings {
 				}
 			}
 		}
-		return matrix[aLength][bLength];
+		return matrix[m][n];
 	}
 
 	// Time complexity is O(m*n).
