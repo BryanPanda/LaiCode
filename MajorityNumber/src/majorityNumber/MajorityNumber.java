@@ -11,12 +11,12 @@ package majorityNumber;
 public class MajorityNumber {
 
 	// Solution 1: Sort the array, then return the middle element.
-	// O(n * log(n)) time, O(1) space.
+	// O(n * log(n)) time, O(n) space, because of merge sort (for primitive types).
 
-	// Solution 2: Hash map
+	// Solution 2: Hash map.
 	// O(n) time, O(n) space.
 
-	// Solution 3
+	// Solution 3: Boyer-Moore Majority Vote Algorithm
 	public int majority(int[] array) {
 		int element = array[0];
 		int count = 1;
