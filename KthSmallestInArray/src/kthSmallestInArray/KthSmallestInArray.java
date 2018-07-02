@@ -1,8 +1,8 @@
 package kthSmallestInArray;
 
-// Given an array of N items, find the k-th smallest element.
+// LeetCode #215 (Kth Largest Element in Array).
 
-// Assumption: array != null && array.length > 0, 0 <= k <= array.length - 1
+// Given an array of N items, find the k-th smallest element.
 
 public class KthSmallestInArray {
 
@@ -25,7 +25,7 @@ public class KthSmallestInArray {
 		// randomly select a pivot position
 		int pivotIndex = left + (int) (Math.random() * (right - left + 1));
 		int pivot = array[pivotIndex];
-		// swap the pivot element to the rightmost position
+		// swap the pivot element with the right-most element
 		swap(array, pivotIndex, right);
 		int leftBound = left;
 		int rightBound = right - 1;
@@ -48,18 +48,6 @@ public class KthSmallestInArray {
 		array[right] = temp;
 	}
 
-	// Time complexity is O(n^2) in the worst case, but O(n) in the average
-	// case;
-	// Space complexity is O(1).
-
-	public static void main(String[] args) {
-		KthSmallestInArray kthSmallestInArray = new KthSmallestInArray();
-		int[] array = new int[] { 2, 4, 1, 5, 3 };
-		System.out.println(kthSmallestInArray.select(array, 0));
-		System.out.println(kthSmallestInArray.select(array, 1));
-		System.out.println(kthSmallestInArray.select(array, 2));
-		System.out.println(kthSmallestInArray.select(array, 3));
-		System.out.println(kthSmallestInArray.select(array, 4));
-	}
-
+	// Time complexity is O(n), if array is randomly shuffled.
+	// Space complexity O(log(n)), if array is randomly shuffled.
 }
