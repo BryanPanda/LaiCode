@@ -1,4 +1,4 @@
-package maxValuesOfSizeKSlidingWindows;
+package maximumValuesOfSizeKSlidingWindows;
 
 import java.util.ArrayList;
 import java.util.Deque;
@@ -14,7 +14,7 @@ import java.util.List;
 // 1. The given array is not null and is not empty.
 // 2. K >= 1, K <= A.length.
 
-public class MaxValuesOfSizeKSlidingWindows {
+public class MaximumValuesOfSizeKSlidingWindows {
 
 	public List<Integer> maxWindows(int[] array, int k) {
 		List<Integer> result = new ArrayList<Integer>();
