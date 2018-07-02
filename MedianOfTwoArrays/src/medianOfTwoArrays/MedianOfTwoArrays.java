@@ -14,6 +14,8 @@ public class MedianOfTwoArrays {
 
 	// Solution 2: Binary search
 	public double median(int[] a, int[] b) {
+		// Arrays.sort(a);
+		// Arrays.sort(b);
 		if ((a.length + b.length) % 2 == 1) {
 			return kth(a, 0, b, 0, (a.length + b.length) / 2 + 1);
 		} else {
