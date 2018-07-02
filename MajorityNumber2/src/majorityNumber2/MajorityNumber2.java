@@ -15,7 +15,7 @@ public class MajorityNumber2 {
 	// Solution 1: Sort the array, then linear scan.
 	// O(n * log(n)) time, O(n) space, because of merge sort (for primitive types).
 
-	// Solution 2: Hash map
+	// Solution 2: Hash map.
 	// O(n) time, O(n) space.
 
 	// Solution 3: Boyer-Moore Majority Vote Algorithm
