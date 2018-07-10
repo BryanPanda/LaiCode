@@ -1,9 +1,9 @@
 package allAnagrams;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
+
+// LeetCode #438 (Find All Anagrams in a String).
 
 // Find all occurrence of anagrams of a given string s in a given string l. 
 // Return the list of starting indices.
@@ -14,47 +14,30 @@ import java.util.Map;
 
 public class AllAnagrams {
 
+	private static final int NUM_LETTERS = 26;
+
 	public List<Integer> allAnagrams(String s, String l) {
-		List<Integer> result = new ArrayList<>();
-		if (l.length() < s.length()) {
-			return result;
+		int[] countMap = new int[NUM_LETTERS];
+		for (int i = 0; i < s.length(); i++) {
+			countMap[s.charAt(i) - 'a']++;
 		}
-		Map<Character, Integer> countMap = getCountMap(s);
-		int match = 0;
-		for (int i = 0; i < l.length(); i++) {
-			Integer count = countMap.get(l.charAt(i));
-			if (count != null) {
-				countMap.put(l.charAt(i), count - 1);
-				if (count == 1) {
-					match++;
-				}
+		int left = 0, right = 0;
+		int count = s.length(); // number of chars in s
+		List<Integer> result = new ArrayList<>();
+		while (right < l.length()) {
+			if (right - left == s.length() && countMap[l.charAt(left++) - 'a']++ >= 0) {
+				count++;
 			}
-			if (i >= s.length()) {
-				count = countMap.get(l.charAt(i - s.length()));
-				if (count != null) {
-					countMap.put(l.charAt(i - s.length()), count + 1);
-					if (count == 0) {
-						match--;
-					}
-				}
+			if (countMap[l.charAt(right++) - 'a']-- > 0) {
+				count--;
 			}
-			if (match == countMap.size()) {
-				result.add(i - s.length() + 1);
+			if (count == 0) {
+				result.add(left);
 			}
 		}
 		return result;
 	}
 
-	private Map<Character, Integer> getCountMap(String s) {
-		Map<Character, Integer> map = new HashMap<>();
-		for (int i = 0; i < s.length(); i++) {
-			Integer count = map.get(s.charAt(i));
-			count = count == null ? 1 : count + 1;
-			map.put(s.charAt(i), count);
-		}
-		return map;
-	}
-
-	// Time complexity is O(|l|).
-	// Space complexity is O(|s|).
+	// Time complexity is O(m + n).
+	// Space complexity is O(1).
 }
