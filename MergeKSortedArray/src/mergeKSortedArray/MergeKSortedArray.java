@@ -9,7 +9,7 @@ import java.util.PriorityQueue;
 
 public class MergeKSortedArray {
 
-	// Solution 1: BFS + Priority Queue
+	// Solution 1: BFS + Heap
 	static class Element {
 		int value;
 		int indexOfArray;
