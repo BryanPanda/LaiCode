@@ -1,9 +1,10 @@
 package rightViewOfBinaryTree;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
+
+// LeetCode #199 (Binary Tree Right Side View).
 
 // Given a Binary Tree, return the right view of it. Right view of a Binary Tree
 // is list of nodes visible when tree is visited from right side, the order of the
@@ -11,12 +12,13 @@ import java.util.List;
 
 public class RightViewOfBinaryTree {
 
+	// BFS
 	public List<Integer> rightView(TreeNode root) {
 		List<Integer> result = new ArrayList<>();
 		if (root == null) {
 			return result;
 		}
-		LinkedList<TreeNode> queue = new LinkedList<>(); // offerLast, pollFirst
+		LinkedList<TreeNode> queue = new LinkedList<>();
 		queue.offerLast(root);
 		while (!queue.isEmpty()) {
 			int size = queue.size();
@@ -38,21 +40,4 @@ public class RightViewOfBinaryTree {
 
 	// Time complexity is O(n).
 	// Space complexity is O(n).
-
-	public static void main(String[] args) {
-		RightViewOfBinaryTree rightViewOfBinaryTree = new RightViewOfBinaryTree();
-		TreeNode root = new TreeNode(1);
-		root.left = new TreeNode(2);
-		root.right = new TreeNode(3);
-		root.left.left = new TreeNode(4);
-		root.left.right = new TreeNode(5);
-		root.right.left = new TreeNode(6);
-		root.right.right = new TreeNode(7);
-		root.left.left.left = new TreeNode(9);
-		root.right.left.right = new TreeNode(8);
-		root.left.left.left.left = new TreeNode(10);
-		root.left.left.left.right = new TreeNode(11);
-		System.out.println(Arrays.toString(rightViewOfBinaryTree.rightView(root).toArray()));
-	}
-
 }
