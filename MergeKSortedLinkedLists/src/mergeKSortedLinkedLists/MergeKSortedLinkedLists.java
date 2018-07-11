@@ -11,7 +11,7 @@ import java.util.PriorityQueue;
 
 public class MergeKSortedLinkedLists {
 
-	// Solution 1: BFS + Priority Queue
+	// Solution 1: BFS + Heap
 	public ListNode merge(List<ListNode> listOfLists) {
 		if (listOfLists == null || listOfLists.size() == 0) {
 			return null;
