@@ -12,7 +12,7 @@ import java.util.Set;
 
 public class KthSmallestWithFactorsTwoThree {
 
-	// Solution 1: BFS + heap (with hash set)
+	// Solution 1: BFS + Heap (with hash set)
 	public int kth(int k) {
 		Set<Integer> set = new HashSet<>();
 		PriorityQueue<Integer> minHeap = new PriorityQueue<>();
