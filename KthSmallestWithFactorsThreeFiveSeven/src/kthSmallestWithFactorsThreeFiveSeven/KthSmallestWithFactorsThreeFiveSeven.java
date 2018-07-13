@@ -1,9 +1,12 @@
 package kthSmallestWithFactorsThreeFiveSeven;
 
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.PriorityQueue;
 import java.util.Set;
+
+// LeetCode #264 (Ugly Number II).
 
 // Find the K-th smallest number s such that s = (3^x) * (5^y) * (7^z), 
 // x > 0 and y > 0 and z > 0, x, y, z are all integers.
@@ -46,12 +49,9 @@ public class KthSmallestWithFactorsThreeFiveSeven {
 	// Solution 2: BFS (no need to use heap nor hash set)
 	public long kth2(int k) {
 		long result = 3 * 5 * 7L;
-		LinkedList<Long> three = new LinkedList<>();
-		LinkedList<Long> five = new LinkedList<>();
-		LinkedList<Long> seven = new LinkedList<>();
-		three.add(result * 3);
-		five.add(result * 5);
-		seven.add(result * 7);
+		LinkedList<Long> three = new LinkedList<>(Arrays.asList(new Long[] { 3 * result }));
+		LinkedList<Long> five = new LinkedList<>(Arrays.asList(new Long[] { 5 * result }));
+		LinkedList<Long> seven = new LinkedList<>(Arrays.asList(new Long[] { 7 * result }));
 		for (int i = 0; i < k - 1; i++) {
 			if (three.peekFirst() < five.peekFirst() && three.peekFirst() < seven.peekFirst()) {
 				result = three.pollFirst();
@@ -61,7 +61,7 @@ public class KthSmallestWithFactorsThreeFiveSeven {
 			} else if (five.peekFirst() < three.peekFirst() && five.peekFirst() < seven.peekFirst()) {
 				result = five.pollFirst();
 				// Don't need to insert to LinkedList<Long> three, because result * 3 has
-				// already been generated, in previous steps.
+				// already been generated, in one previous step.
 				five.offerLast(result * 5);
 				seven.offerLast(result * 7);
 			} else {
