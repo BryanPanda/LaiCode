@@ -1,9 +1,12 @@
 package kthSmallestWithFactorsTwoThree;
 
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.PriorityQueue;
 import java.util.Set;
+
+// LeetCode #264 (Ugly Number II).
 
 // Find the K-th smallest number s such that s = (2^x) * (3^y), x >= 0 and y >= 0, 
 // x and y are both integers.
@@ -36,10 +39,8 @@ public class KthSmallestWithFactorsTwoThree {
 	// Solution 2: BFS (no need to use heap nor hash set)
 	public int kth2(int k) {
 		int result = 1;
-		LinkedList<Integer> two = new LinkedList<>();
-		LinkedList<Integer> three = new LinkedList<>();
-		two.offerLast(2 * result);
-		three.offerLast(3 * result);
+		LinkedList<Integer> two = new LinkedList<>(Arrays.asList(new Integer[] { 2 * result }));
+		LinkedList<Integer> three = new LinkedList<>(Arrays.asList(new Integer[] { 3 * result }));
 		for (int i = 0; i < k - 1; i++) {
 			if (two.peekFirst() < three.peekFirst()) {
 				result = two.pollFirst();
